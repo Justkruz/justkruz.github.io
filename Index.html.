@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Morning Dew Cleaning Crew - Eco-friendly, professional cleaning services for homes, offices, and Airbnb in Virginia Beach."/>
+  <meta name="keywords" content="cleaning, eco-friendly, residential cleaning, commercial cleaning, Airbnb cleaning"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Morning Dew Cleaning Crew</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    /* Smooth fade-in animations for hero text */
+    .fade-in-down {
+      opacity:0;
+      transform:translateY(-20px);
+      animation: fadeInDown 0.8s forwards;
+    }
+    @keyframes fadeInDown {
+      to { opacity:1; transform: translateY(0); }
+    }
+
+    .fade-in-up {
+      opacity:0;
+      transform:translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+    @keyframes fadeInUp {
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    /* Testimonial Slider */
+    .testimonial-slide {
+      display: none;
+    }
+    .testimonial-slide.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- NAVBAR -->
+  <nav class="w-full fixed top-0 left-0 z-50 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-xl font-bold text-green-600">Morning Dew Cleaning Crew</div>
+      <button class="md:hidden text-gray-700" id="menuBtn">
+        <i class="fas fa-bars fa-2x"></i>
+      </button>
+      <ul class="hidden md:flex space-x-6 font-medium">
+        <li><a href="#about" class="hover:text-green-600">About</a></li>
+        <li><a href="#services" class="hover:text-green-600">Services</a></li>
+        <li><a href="#pricing" class="hover:text-green-600">Pricing</a></li>
+        <li><a href="#estimate" class="hover:text-green-600">Get an Estimate</a></li>
+        <li><a href="#contact" class="hover:text-green-600">Contact</a></li>
+      </ul>
+    </div>
+    <ul id="mobileMenu" class="bg-white w-full hidden flex-col space-y-4 px-4 py-4 md:hidden border-t">
+      <li><a href="#about" class="block hover:text-green-600">About</a></li>
+      <li><a href="#services" class="block hover:text-green-600">Services</a></li>
+      <li><a href="#pricing" class="block hover:text-green-600">Pricing</a></li>
+      <li><a href="#estimate" class="block hover:text-green-600">Get an Estimate</a></li>
+      <li><a href="#contact" class="block hover:text-green-600">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="h-screen w-full flex flex-col justify-center items-center bg-gradient-to-b from-green-600 to-green-400 text-white relative overflow-hidden pt-20">
+    <div class="container mx-auto text-center px-4">
+      <h1 class="text-4xl md:text-5xl font-bold fade-in-down mb-4">Help on the Way to a Cleaner Day</h1>
+      <p class="text-lg md:text-xl fade-in-up mb-8">Professional, eco-friendly cleaning services for homes, offices, and Airbnb properties.</p>
+      <a href="#estimate" class="inline-block bg-white text-green-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition">Request a Free Quote</a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-16" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-green-600 mb-6">About Us</h2>
+      <p class="text-lg leading-relaxed">
+        At Morning Dew Cleaning Crew, we believe a fresh, clean environment can brighten your day and foster productivity.  
+        Locally owned in Virginia Beach, our dedicated team uses non-toxic, eco-friendly products to ensure safe, sparkling spaces. 
+        We tailor our services to your unique needs, delivering reliable, detail-oriented results every time.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-16 bg-white" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-green-600 mb-10">Our Services</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition">
+          <i class="fas fa-home text-green-600 text-4xl mb-4"></i>
+          <h3 class="font-semibold text-xl mb-2">Residential Cleaning</h3>
+          <p class="text-sm leading-relaxed">Regular upkeep, deep cleans, and move-in/move-out services to keep your home shining.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition">
+          <i class="fas fa-building text-green-600 text-4xl mb-4"></i>
+          <h3 class="font-semibold text-xl mb-2">Commercial Cleaning</h3>
+          <p class="text-sm leading-relaxed">Offices, retail spaces, and restaurants—all maintained to impress your clients.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition">
+          <i class="fas fa-bed text-green-600 text-4xl mb-4"></i>
+          <h3 class="font-semibold text-xl mb-2">Airbnb Turnovers</h3>
+          <p class="text-sm leading-relaxed">Fast, thorough turnovers so every guest checks into a spotless, welcoming property.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition">
+          <i class="fas fa-sparkles text-green-600 text-4xl mb-4"></i>
+          <h3 class="font-semibold text-xl mb-2">Specialty Add-Ons</h3>
+          <p class="text-sm leading-relaxed">Oven interiors, fridge cleaning, window washing, carpet spot treatments, and more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-16 bg-gray-50" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-green-600 mb-6">Pricing</h2>
+      <p class="max-w-xl mx-auto mb-10">Below is our basic estimate price sheet. Actual prices may vary based on property size, condition, and frequency. For a personalized quote, use our estimate form below.</p>
+      <ul class="space-y-3 text-gray-700">
+        <li><strong>Residential Regular Cleaning:</strong> From $100</li>
+        <li><strong>Residential Deep Cleaning:</strong> From $175</li>
+        <li><strong>Move-In/Move-Out:</strong> From $200</li>
+        <li><strong>Commercial (Offices):</strong> From $150</li>
+        <li><strong>Airbnb Turnovers:</strong> From $100</li>
+        <li><strong>Add-Ons:</strong> Oven ($30), Fridge ($25), Windows ($5 each), Carpet Spots ($50/area)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-16 bg-white" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-green-600 mb-10">What Our Clients Say</h2>
+      <div class="relative">
+        <div class="testimonial-slide active" id="testimonial1">
+          <p class="text-lg italic mb-4">"Morning Dew Cleaning Crew transformed my home! Their attention to detail and eco-friendly products give me peace of mind. Highly recommended!"</p>
+          <span class="font-semibold">- Sarah, Homeowner</span>
+        </div>
+        <div class="testimonial-slide" id="testimonial2">
+          <p class="text-lg italic mb-4">"As an Airbnb host, I rely on quick, quality turnovers. Morning Dew never disappoints. My guests always comment on how spotless the place is."</p>
+          <span class="font-semibold">- Mark, Airbnb Host</span>
+        </div>
+        <div class="testimonial-slide" id="testimonial3">
+          <p class="text-lg italic mb-4">"Our office looks immaculate after every visit. The team is professional, punctual, and works around our schedule without issue."</p>
+          <span class="font-semibold">- Alicia, Office Manager</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTIMATE FORM -->
+  <section id="estimate" class="py-16 bg-gray-50" data-aos="fade-up">
+    <div class="max-w-lg mx-auto px-4">
+      <h2 class="text-3xl font-bold text-green-600 text-center mb-8">Get an Estimate</h2>
+      <form id="estimateForm" class="space-y-4">
+        <div>
+          <label for="name" class="block font-semibold">Your Name *</label>
+          <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded p-2"/>
+        </div>
+        <div>
+          <label for="email" class="block font-semibold">Email *</label>
+          <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded p-2"/>
+        </div>
+        <div>
+          <label for="phone" class="block font-semibold">Phone *</label>
+          <input type="tel" id="phone" name="phone" pattern="\\d{10,}" required placeholder="Digits only" class="w-full border border-gray-300 rounded p-2"/>
+        </div>
+        <div>
+          <label for="propertyType" class="block font-semibold">Property Type *</label>
+          <select id="propertyType" name="propertyType" required class="w-full border border-gray-300 rounded p-2">
+            <option value="">Select One</option>
+            <option value="residential">Residential</option>
+            <option value="commercial">Commercial</option>
+            <option value="airbnb">Airbnb/Short-Term Rental</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="serviceType" class="block font-semibold">Service Needed *</label>
+          <select id="serviceType" name="serviceType" required class="w-full border border-gray-300 rounded p-2">
+            <option value="">Select One</option>
+            <option value="regular">Regular Cleaning</option>
+            <option value="deep">Deep Cleaning</option>
+            <option value="move-in-out">Move-In/Move-Out Cleaning</option>
+            <option value="trash">Trash Removal</option>
+            <option value="specialty">Specialty Cleaning</option>
+          </select>
+        </div>
+        <div>
+          <label for="squareFootage" class="block font-semibold">Approx. Square Footage</label>
+          <input type="number" id="squareFootage" name="squareFootage" class="w-full border border-gray-300 rounded p-2" placeholder="e.g., 2000"/>
+        </div>
+        <div>
+          <label for="notes" class="block font-semibold">Additional Notes</label>
+          <textarea id="notes" name="notes" class="w-full border border-gray-300 rounded p-2" placeholder="Tell us more about your space or requests"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-green-600 text-white font-semibold py-3 rounded hover:bg-green-700 transition">Request Estimate</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 bg-white" data-aos="fade-up">
+    <div class="max-w-xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-green-600 mb-6">Contact Us</h2>
+      <p class="leading-relaxed mb-4">Have questions or ready to book? We’d love to hear from you!</p>
+      <p class="mb-2"><strong>Phone:</strong> (555) 123-4567</p>
+      <p class="mb-2"><strong>Email:</strong> info@morningdewcleaning.com</p>
+      <p><strong>Service Area:</strong> Virginia Beach & Surrounding Areas</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; <span id="year"></span> Morning Dew Cleaning Crew. All Rights Reserved.</p>
+    <p>Fresh. Clean. Reliable.</p>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" id="backToTop" class="hidden fixed bottom-5 right-5 bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl hover:bg-green-700 transition">&#8679;</a>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      offset: 100,
+    });
+  </script>
+
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Back to Top Button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.remove('hidden');
+      } else {
+        backToTop.classList.add('hidden');
+      }
+    });
+
+    // Basic Form Submission Simulation
+    const estimateForm = document.getElementById('estimateForm');
+    estimateForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Basic validation
+      const requiredFields = ['name', 'email', 'phone', 'propertyType', 'serviceType'];
+      for (let f of requiredFields) {
+        if (!document.getElementById(f).value.trim()) {
+          alert("Please fill in all required fields.");
+          return;
+        }
+      }
+      alert("Your estimate request has been submitted! We'll get back to you soon.");
+      estimateForm.reset();
+    });
+
+    // Testimonial Slider
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.testimonial-slide');
+    function showSlide() {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+      });
+      slides[slideIndex].classList.add('active');
+      slideIndex = (slideIndex + 1) % slides.length;
+    }
+    showSlide();
+    setInterval(showSlide, 5000); // change testimonial every 5 seconds
+  </script>
+</body>
+</html>

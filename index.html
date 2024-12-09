@@ -123,7 +123,7 @@
       mobileMenu.classList.toggle('hidden');
     });
   </script>
-    <!-- HERO SECTION -->
+     <!-- HERO SECTION -->
   <header class="h-screen flex flex-col justify-center items-center bg-gray-100 relative">
     <!-- Background Video -->
     <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
@@ -135,13 +135,372 @@
     <div class="absolute inset-0 bg-gradient-to-b from-green-600 to-green-400 opacity-70 z-0"></div>
 
     <!-- Hero Content -->
-    <div class="z-10 text-center text-white px-4">
+    <div class="z-10 text-center text-white px-4 max-w-2xl">
       <h1 class="text-5xl font-bold fade-in mb-4">Help on the Way to a Cleaner Day</h1>
-      <p class="text-lg fade-in mb-6">Professional, eco-friendly cleaning services for homes, offices, and Airbnb properties.</p>
-      <div class="space-x-4">
+      <p class="text-lg fade-in mb-8">Professional, eco-friendly cleaning services for homes, offices, and Airbnb properties.</p>
+      <div class="flex justify-center space-x-4">
         <a href="#estimate" class="bg-white text-green-600 py-3 px-6 rounded hover:bg-gray-100 transition fade-in">Get an Estimate</a>
         <a href="#services" class="bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 transition fade-in">Explore Our Services</a>
       </div>
     </div>
-  </header> 
-  
+  </header>
+    <!-- SERVICES SECTION -->
+  <section id="services" class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-green-600 mb-8">Our Services</h2>
+      <p class="text-lg text-gray-600 mb-12">From homes to offices and Airbnb properties, we provide tailored cleaning solutions to meet your needs.</p>
+      
+      <!-- Service Cards -->
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Residential Cleaning -->
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition hover:scale-105">
+          <i class="fas fa-home text-green-600 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Residential Cleaning</h3>
+          <p class="text-gray-600 mb-4">Regular upkeep, deep cleaning, and move-in/move-out services to keep your home spotless.</p>
+          <a href="#residential" class="text-green-600 font-semibold hover:underline">Learn More</a>
+        </div>
+        
+        <!-- Commercial Cleaning -->
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition hover:scale-105">
+          <i class="fas fa-building text-green-600 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Commercial Cleaning</h3>
+          <p class="text-gray-600 mb-4">Professional cleaning for offices, retail spaces, and restaurants to impress your clients.</p>
+          <a href="#commercial" class="text-green-600 font-semibold hover:underline">Learn More</a>
+        </div>
+        
+        <!-- Airbnb Turnovers -->
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition hover:scale-105">
+          <i class="fas fa-bed text-green-600 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Airbnb Turnovers</h3>
+          <p class="text-gray-600 mb-4">Fast, thorough turnovers to ensure every guest checks into a spotless, welcoming space.</p>
+          <a href="#airbnb" class="text-green-600 font-semibold hover:underline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- PRICING SECTION -->
+  <section id="pricing" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-green-600 mb-6">Pricing</h2>
+      <p class="text-lg text-gray-600 mb-8">Our transparent pricing ensures you know exactly what to expect. Customize your quote with our estimate calculator.</p>
+      
+      <!-- Pricing Table -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Residential Pricing -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold text-green-600 mb-4">Residential Cleaning</h3>
+          <ul class="text-gray-600 space-y-2">
+            <li><strong>Regular Cleaning:</strong> Starting at $120</li>
+            <li><strong>Deep Cleaning:</strong> Starting at $175</li>
+            <li><strong>Move-In/Move-Out:</strong> Starting at $200</li>
+          </ul>
+        </div>
+
+        <!-- Commercial Pricing -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold text-green-600 mb-4">Commercial Cleaning</h3>
+          <ul class="text-gray-600 space-y-2">
+            <li><strong>Office Cleaning:</strong> $150 base + $0.10/sqft</li>
+            <li><strong>Retail Spaces:</strong> Custom Pricing</li>
+            <li><strong>Restaurant Cleaning:</strong> Custom Pricing</li>
+          </ul>
+        </div>
+
+        <!-- Airbnb Turnover Pricing -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold text-green-600 mb-4">Airbnb Turnovers</h3>
+          <ul class="text-gray-600 space-y-2">
+            <li><strong>Light Cleaning:</strong> $100</li>
+            <li><strong>Deep Cleaning:</strong> $150</li>
+            <li><strong>Restocking Supplies:</strong> $25</li>
+          </ul>
+        </div>
+
+        <!-- Add-Ons -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold text-green-600 mb-4">Specialty Add-Ons</h3>
+          <ul class="text-gray-600 space-y-2">
+            <li><strong>Oven Cleaning:</strong> $30</li>
+            <li><strong>Walls/Baseboards:</strong> $25</li>
+            <li><strong>Carpet Cleaning:</strong> $50</li>
+            <li><strong>Laundry Services:</strong> $30</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Call-to-Action -->
+      <div class="mt-8">
+        <a href="#estimate" class="bg-green-600 text-white py-3 px-6 rounded hover:bg-green-700 transition">Use the Estimate Calculator</a>
+      </div>
+    </div>
+  </section>
+    <!-- TESTIMONIALS SECTION -->
+  <section id="testimonials" class="py-16 bg-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-green-600 mb-8">What Our Clients Say</h2>
+
+      <!-- Testimonial Carousel -->
+      <div class="relative overflow-hidden">
+        <div id="testimonialSlides" class="carousel flex transition-transform duration-500">
+          <!-- Slide 1 -->
+          <div class="carousel-item p-6 bg-white shadow rounded-lg">
+            <p class="italic text-gray-700 mb-4">"Morning Dew Cleaning Crew transformed my home! Their attention to detail and eco-friendly products give me peace of mind. Highly recommended!"</p>
+            <span class="font-semibold text-green-600">- Sarah, Homeowner</span>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item p-6 bg-white shadow rounded-lg hidden">
+            <p class="italic text-gray-700 mb-4">"Quick, reliable, and professional—perfect for my Airbnb turnovers. My guests always rave about the cleanliness!"</p>
+            <span class="font-semibold text-green-600">- Mark, Airbnb Host</span>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item p-6 bg-white shadow rounded-lg hidden">
+            <p class="italic text-gray-700 mb-4">"Our office looks immaculate after every visit. The team is professional, punctual, and detail-oriented."</p>
+            <span class="font-semibold text-green-600">- Alicia, Office Manager</span>
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <div class="flex justify-center mt-6 space-x-4">
+          <button class="w-3 h-3 bg-green-600 rounded-full carousel-dot" data-slide="0"></button>
+          <button class="w-3 h-3 bg-gray-400 rounded-full carousel-dot" data-slide="1"></button>
+          <button class="w-3 h-3 bg-gray-400 rounded-full carousel-dot" data-slide="2"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- ESTIMATE CALCULATOR SECTION -->
+  <section id="estimate" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-green-600 text-center mb-6">Get Your Custom Estimate</h2>
+      <p class="text-gray-600 text-center mb-8">Use the form below to get an instant estimate based on your cleaning needs. For a detailed quote, please contact us directly.</p>
+
+      <form id="estimateForm" class="space-y-6 bg-white p-6 rounded shadow-lg">
+        <!-- Service Type -->
+        <div>
+          <label for="propertyType" class="block font-semibold">Select a Service Type *</label>
+          <select id="propertyType" name="propertyType" required class="w-full border border-gray-300 rounded p-2">
+            <option value="">Choose a Service</option>
+            <option value="residential">Residential Cleaning</option>
+            <option value="commercial">Commercial Cleaning</option>
+            <option value="airbnb">Airbnb Turnover</option>
+          </select>
+        </div>
+
+        <!-- Dynamic Inputs (Added Based on Service Selection) -->
+        <div id="dynamicInputs"></div>
+
+        <!-- Add-Ons -->
+        <div id="addOns" class="hidden space-y-2">
+          <h3 class="font-semibold">Optional Add-Ons</h3>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="oven" class="h-4 w-4" />
+            <label for="oven" class="text-gray-600">Oven Cleaning (+$30)</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="walls" class="h-4 w-4" />
+            <label for="walls" class="text-gray-600">Walls/Baseboards Cleaning (+$25)</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="carpet" class="h-4 w-4" />
+            <label for="carpet" class="text-gray-600">Carpet Spot Cleaning (+$50)</label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <input type="checkbox" id="laundry" class="h-4 w-4" />
+            <label for="laundry" class="text-gray-600">Laundry Room Cleaning (+$30)</label>
+          </div>
+        </div>
+
+        <!-- File Upload -->
+        <div>
+          <label for="fileUpload" class="block font-semibold">Upload Photos (Optional)</label>
+          <input type="file" id="fileUpload" multiple class="w-full border border-gray-300 rounded p-2" />
+          <p class="text-sm text-gray-500 mt-2">Attach photos of your space for a more accurate quote.</p>
+        </div>
+
+        <!-- Calculate Button -->
+        <button type="button" id="calculateEstimate" class="w-full bg-green-600 text-white font-semibold py-3 rounded hover:bg-green-700 transition">
+          Calculate Estimate
+        </button>
+
+        <!-- Estimated Price Display -->
+        <div id="estimateResultContainer" class="mt-6 hidden p-4 bg-gray-100 border border-gray-300 rounded">
+          <h3 class="font-semibold text-lg mb-2">Estimated Price:</h3>
+          <p id="estimateResult" class="text-xl font-bold text-green-600">$0.00</p>
+          <p class="text-sm text-gray-600 mt-2">* This is an estimate. For a detailed quote, please contact our team.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- JavaScript for Dynamic Inputs and Estimate Calculation -->
+  <script>
+    const pricing = {
+      residential: { base: 120, bedroom: 20, bathroom: 15, walls: 25, oven: 30, carpet: 50, laundry: 30 },
+      commercial: { base: 150, sqft: 0.10, restrooms: 50 },
+      airbnb: { light: 100, deep: 150, restocking: 25 }
+    };
+
+    const propertyType = document.getElementById("propertyType");
+    const dynamicInputs = document.getElementById("dynamicInputs");
+    const addOns = document.getElementById("addOns");
+    const estimateResult = document.getElementById("estimateResult");
+    const estimateResultContainer = document.getElementById("estimateResultContainer");
+
+    propertyType.addEventListener("change", () => {
+      const type = propertyType.value;
+      dynamicInputs.innerHTML = "";
+      addOns.classList.add("hidden");
+
+      if (type === "residential") {
+        dynamicInputs.innerHTML = `
+          <label for="bedrooms" class="block font-semibold">Number of Bedrooms *</label>
+          <input type="number" id="bedrooms" class="w-full border border-gray-300 rounded p-2" placeholder="e.g., 3" />
+
+          <label for="bathrooms" class="block font-semibold mt-4">Number of Bathrooms *</label>
+          <input type="number" id="bathrooms" class="w-full border border-gray-300 rounded p-2" placeholder="e.g., 2" />
+        `;
+        addOns.classList.remove("hidden");
+      } else if (type === "commercial") {
+        dynamicInputs.innerHTML = `
+          <label for="sqft" class="block font-semibold">Square Footage *</label>
+          <input type="number" id="sqft" class="w-full border border-gray-300 rounded p-2" placeholder="e.g., 1500" />
+        `;
+        addOns.classList.remove("hidden");
+      } else if (type === "airbnb") {
+        dynamicInputs.innerHTML = `
+          <label for="cleaningType" class="block font-semibold">Cleaning Type *</label>
+          <select id="cleaningType" class="w-full border border-gray-300 rounded p-2">
+            <option value="light">Light Cleaning</option>
+            <option value="deep">Deep Cleaning</option>
+          </select>
+        `;
+        addOns.classList.remove("hidden");
+      }
+    });
+
+    document.getElementById("calculateEstimate").addEventListener("click", () => {
+      let estimate = 0;
+      const type = propertyType.value;
+
+      if (type === "residential") {
+        const bedrooms = parseInt(document.getElementById("bedrooms")?.value || 0);
+        const bathrooms = parseInt(document.getElementById("bathrooms")?.value || 0);
+        estimate += pricing.residential.base + (bedrooms * pricing.residential.bedroom) + (bathrooms * pricing.residential.bathroom);
+      } else if (type === "commercial") {
+        const sqft = parseInt(document.getElementById("sqft")?.value || 0);
+        estimate += pricing.commercial.base + (sqft * pricing.commercial.sqft);
+      } else if (type === "airbnb") {
+        const cleaningType = document.getElementById("cleaningType")?.value || "light";
+        estimate += pricing.airbnb[cleaningType];
+      }
+
+      if (document.getElementById("oven")?.checked) estimate += pricing.residential.oven;
+      if (document.getElementById("walls")?.checked) estimate += pricing.residential.walls;
+      if (document.getElementById("carpet")?.checked) estimate += pricing.residential.carpet;
+      if (document.getElementById("laundry")?.checked) estimate += pricing.residential.laundry;
+
+      estimateResult.textContent = `$${estimate.toFixed(2)}`;
+      estimateResultContainer.classList.remove("hidden");
+    });
+  </script>
+    <!-- CONTACT SECTION -->
+  <section id="contact" class="py-16 bg-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-green-600 mb-6">Contact Us</h2>
+      <p class="text-gray-600 mb-4">We’re here to help! Reach out to us for questions, quotes, or to schedule a service.</p>
+      
+      <!-- Contact Info -->
+      <div class="text-left space-y-4 mb-8">
+        <p><strong>Phone:</strong> <a href="tel:+17578027170" class="text-green-600 hover:underline">+1 (757) 802-7170</a></p>
+        <p><strong>Email:</strong> <a href="mailto:justkruz@morningdewcleaningcrew.com" class="text-green-600 hover:underline">justkruz@morningdewcleaningcrew.com</a></p>
+        <p><strong>Service Area:</strong> Virginia Beach & Surrounding Areas</p>
+        <p><strong>Hours of Operation:</strong> Sunday to Saturday, 8:00 AM - 6:00 PM (24-hour services available with advance notice)</p>
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contactForm" class="space-y-4 bg-white p-6 rounded shadow-lg">
+        <div>
+          <label for="name" class="block font-semibold">Name *</label>
+          <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded p-2" placeholder="Your Name">
+        </div>
+        <div>
+          <label for="email" class="block font-semibold">Email *</label>
+          <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded p-2" placeholder="Your Email">
+        </div>
+        <div>
+          <label for="phone" class="block font-semibold">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required class="w-full border border-gray-300 rounded p-2" placeholder="Your Phone Number">
+        </div>
+        <div>
+          <label for="message" class="block font-semibold">Message *</label>
+          <textarea id="message" name="message" required class="w-full border border-gray-300 rounded p-2" rows="4" placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-green-600 text-white font-semibold py-3 rounded hover:bg-green-700 transition">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact Form JavaScript -->
+  <script>
+    const contactForm = document.getElementById('contactForm');
+
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      if (name && email && phone && message) {
+        alert('Thank you for contacting Morning Dew Cleaning Crew! We will get back to you shortly.');
+        contactForm.reset();
+      } else {
+        alert('Please fill out all required fields.');
+      }
+    });
+  </script>
+    <!-- FOOTER SECTION -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <!-- Company Info -->
+        <div class="text-center md:text-left">
+          <h3 class="text-lg font-bold">Morning Dew Cleaning Crew</h3>
+          <p class="text-sm">Fresh. Clean. Reliable.</p>
+        </div>
+        
+        <!-- Social Media Links -->
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="https://www.facebook.com" target="_blank" class="text-white hover:text-green-400"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com" target="_blank" class="text-white hover:text-green-400"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com" target="_blank" class="text-white hover:text-green-400"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.whatsapp.com" target="_blank" class="text-white hover:text-green-400"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="mt-6 text-center text-sm">
+        &copy; <span id="currentYear"></span> Morning Dew Cleaning Crew. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#top" id="backToTop" class="hidden fixed bottom-5 right-5 bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center text-xl hover:bg-green-700 transition">&#8679;</a>
+
+  <!-- Footer JavaScript -->
+  <script>
+    // Update Year in Footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Back to Top Button Visibility
+    const backToTopButton = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.remove('hidden');
+      } else {
+        backToTopButton.classList.add('hidden');
+      }
+    });
+  </script>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Morning Dew Cleaning Crew - Eco-friendly, professional cleaning services for homes, offices, and Airbnb in Virginia Beach." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Morning Dew Cleaning Crew - Eco-friendly, professional cleaning services for homes, offices, and Airbnb in Virginia Beach.">
   <title>Morning Dew Cleaning Crew</title>
 
   <!-- Google Fonts -->
@@ -11,10 +11,23 @@
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       scroll-behavior: smooth;
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
   </style>
 </head>
@@ -27,59 +40,93 @@
         <li><a href="#about" class="hover:text-green-600">About</a></li>
         <li><a href="#services" class="hover:text-green-600">Services</a></li>
         <li><a href="#pricing" class="hover:text-green-600">Pricing</a></li>
+        <li><a href="#testimonials" class="hover:text-green-600">Testimonials</a></li>
         <li><a href="#estimate" class="hover:text-green-600">Get an Estimate</a></li>
         <li><a href="#contact" class="hover:text-green-600">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header class="h-screen flex flex-col justify-center items-center bg-gradient-to-b from-green-600 to-green-400 text-white">
-    <h1 class="text-5xl font-bold mb-4">Help on the Way to a Cleaner Day</h1>
-    <p class="text-lg mb-6">Professional, eco-friendly cleaning services for homes, offices, and Airbnb properties.</p>
-    <a href="#estimate" class="bg-white text-green-600 py-3 px-6 rounded">Request a Free Quote</a>
+  <!-- HERO SECTION -->
+  <header class="h-screen flex flex-col justify-center items-center bg-gradient-to-b from-green-600 to-green-400 text-white text-center">
+    <h1 class="text-5xl font-bold mb-4 fade-in">Help on the Way to a Cleaner Day</h1>
+    <p class="text-lg mb-6 fade-in">Professional, eco-friendly cleaning services for homes, offices, and Airbnb properties.</p>
+    <a href="#estimate" class="bg-white text-green-600 py-3 px-6 rounded hover:bg-gray-100 transition fade-in">Request a Free Quote</a>
   </header>
 
-  <!-- ESTIMATE -->
-  <section id="estimate" class="py-16 bg-gray-50">
-    <div class="max-w-lg mx-auto">
-      <h2 class="text-3xl font-bold text-green-600 mb-8">Get Your Custom Estimate</h2>
-      <form id="estimateForm" class="space-y-4">
-        <!-- Property Type -->
-        <div>
-          <label for="propertyType" class="block font-semibold">Property Type *</label>
-          <select id="propertyType" name="propertyType" required class="w-full border border-gray-300 rounded p-2">
-            <option value="">Select One</option>
-            <option value="residential">Residential</option>
-            <option value="commercial">Commercial</option>
-            <option value="airbnb">Airbnb Turnover</option>
-          </select>
+  <!-- ABOUT -->
+  <section id="about" class="py-16">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-green-600 mb-6">About Us</h2>
+      <p>
+        At Morning Dew Cleaning Crew, we believe a fresh, clean environment can brighten your day and foster productivity. 
+        Locally owned in Virginia Beach, our dedicated team uses non-toxic, eco-friendly products to ensure safe, sparkling spaces. 
+        We tailor our services to your unique needs, delivering reliable, detail-oriented results every time.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-green-600 mb-6">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <i class="fas fa-home text-green-600 text-4xl mb-4"></i>
+          <h3 class="font-bold text-xl mb-2">Residential Cleaning</h3>
+          <p>Regular, deep cleaning, move-in/move-out services tailored to your home.</p>
         </div>
-
-        <!-- Dynamic Fields -->
-        <div id="dynamicFields" class="space-y-4"></div>
-
-        <!-- Calculate Button -->
-        <button type="button" id="calculateEstimate" class="w-full bg-green-600 text-white py-3 rounded">Calculate Estimate</button>
-      </form>
-
-      <!-- Estimate Display -->
-      <div class="mt-6 p-4 bg-white border border-gray-300 rounded">
-        <h3 class="font-semibold text-lg mb-2">Your Estimated Price:</h3>
-        <p id="estimateResult" class="text-xl font-bold text-green-600">$0.00</p>
-        <p class="text-sm text-gray-600 mt-2">*This is an estimate. Final pricing may vary based on specifics.</p>
-      </div>
-
-      <!-- Next Steps -->
-      <div id="nextSteps" class="hidden mt-6">
-        <h3 class="font-semibold text-lg mb-2">Next Steps:</h3>
-        <p class="text-gray-700">Please contact us at <a href="mailto:justkruz@morningdewcleaningcrew.com" class="text-green-600">justkruz@morningdewcleaningcrew.com</a> or call <a href="tel:+17578027170" class="text-green-600">+1 (757) 802-7170</a> to book your service.</p>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <i class="fas fa-building text-green-600 text-4xl mb-4"></i>
+          <h3 class="font-bold text-xl mb-2">Commercial Cleaning</h3>
+          <p>Offices, retail spaces, and restaurants—spotless and welcoming.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <i class="fas fa-bed text-green-600 text-4xl mb-4"></i>
+          <h3 class="font-bold text-xl mb-2">Airbnb Turnovers</h3>
+          <p>Light and deep cleaning for hassle-free guest turnover.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- PRICING -->
+  <section id="pricing" class="py-16">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-green-600 mb-6">Pricing</h2>
+      <p>Below is our basic pricing structure. For detailed estimates, use the form below.</p>
+      <ul class="mt-6 space-y-3 text-left text-gray-700">
+        <li><strong>Residential Cleaning:</strong> $120 base, $20/bedroom, $15/bathroom</li>
+        <li><strong>Commercial Cleaning:</strong> $150 base, $0.10/sqft</li>
+        <li><strong>Airbnb Turnover:</strong> $100 (light), $150 (deep)</li>
+        <li><strong>Add-Ons:</strong> Oven Cleaning ($30), Walls/Baseboards ($25), Carpet Cleaning ($50), Laundry ($30)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-16 bg-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-green-600 mb-6">What Our Clients Say</h2>
+      <div class="space-y-6">
+        <blockquote class="italic text-gray-700">"Morning Dew transformed my home! Highly recommend their services." - Sarah</blockquote>
+        <blockquote class="italic text-gray-700">"Quick, reliable, and professional—perfect for my Airbnb turnovers." - Mark</blockquote>
+        <blockquote class="italic text-gray-700">"Great for our office needs! Always spotless and punctual." - Alicia</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTIMATE CALCULATOR -->
+  <section id="estimate" class="py-16">
+    <div class="max-w-lg mx-auto">
+      <h2 class="text-3xl font-bold text-green-600 mb-6">Get Your Custom Estimate</h2>
+      <p>Use the form below to calculate your estimated price based on your cleaning needs.</p>
+      <form id="estimateForm" class="space-y-4"></form>
+    </div>
+  </section>
+
   <!-- CONTACT -->
-  <section id="contact" class="py-16">
+  <section id="contact" class="py-16 bg-gray-100">
     <div class="max-w-xl mx-auto text-center">
       <h2 class="text-3xl font-bold text-green-600 mb-6">Contact Us</h2>
       <p>Phone: +1 (757) 802-7170</p>
@@ -87,83 +134,16 @@
     </div>
   </section>
 
-  <footer class="bg-gray-800 text-white py-4 text-center">
+  <footer class="bg-gray-800 text-white py-6 text-center">
     <p>&copy; 2024 Morning Dew Cleaning Crew. All rights reserved.</p>
   </footer>
 
   <script>
     const pricing = {
-      residential: { base: 120, bedroom: 20, bathroom: 15, walls: 25, laundry: 30, window: 5, oven: 30, fridge: 25, carpet: 50 },
-      commercial: { base: 150, sqft: 0.10, kitchen: 50, restroom: 40 },
-      airbnb: { light: 100, deep: 150, restocking: 25, laundry: 30 }
+      residential: { base: 120, bedroom: 20, bathroom: 15, walls: 25 },
+      commercial: { base: 150, sqft: 0.10 },
+      airbnb: { light: 100, deep: 150 }
     };
-
-    document.getElementById('propertyType').addEventListener('change', function () {
-      const dynamicFields = document.getElementById('dynamicFields');
-      dynamicFields.innerHTML = '';
-
-      if (this.value === 'residential') {
-        dynamicFields.innerHTML = `
-          <label>Bedrooms</label>
-          <input type="number" id="bedrooms" class="w-full border border-gray-300 rounded p-2" placeholder="e.g., 3" />
-          <label>Bathrooms</label>
-          <input type="number" id="bathrooms" class="w-full border border-gray-300 rounded p-2" placeholder="e.g., 2" />
-          <label>Walls/Baseboards Cleaning</label>
-          <input type="checkbox" id="walls" /> $25
-          <label>Laundry Room</label>
-          <input type="checkbox" id="laundry" /> $30
-        `;
-      } else if (this.value === 'commercial') {
-        dynamicFields.innerHTML = `
-          <label>Square Footage</label>
-          <input type="number" id="sqft" class="w-full border border-gray-300 rounded p-2" placeholder="e.g., 1500" />
-          <label>Restroom Sanitization</label>
-          <input type="checkbox" id="restroom" /> $40
-        `;
-      } else if (this.value === 'airbnb') {
-        dynamicFields.innerHTML = `
-          <label>Turnover Type</label>
-          <select id="airbnbType" class="w-full border border-gray-300 rounded p-2">
-            <option value="light">Light Cleaning</option>
-            <option value="deep">Deep Cleaning</option>
-          </select>
-          <label>Restocking Supplies</label>
-          <input type="checkbox" id="restocking" /> $25
-          <label>Laundry</label>
-          <input type="checkbox" id="laundryAirbnb" /> $30
-        `;
-      }
-    });
-
-    document.getElementById('calculateEstimate').addEventListener('click', function () {
-      const type = document.getElementById('propertyType').value;
-      let estimate = 0;
-
-      if (type === 'residential') {
-        const bedrooms = parseInt(document.getElementById('bedrooms')?.value || 0);
-        const bathrooms = parseInt(document.getElementById('bathrooms')?.value || 0);
-        const walls = document.getElementById('walls')?.checked ? pricing.residential.walls : 0;
-        const laundry = document.getElementById('laundry')?.checked ? pricing.residential.laundry : 0;
-        estimate = pricing.residential.base + bedrooms * pricing.residential.bedroom + bathrooms * pricing.residential.bathroom + walls + laundry;
-      } else if (type === 'commercial') {
-        const sqft = parseInt(document.getElementById('sqft')?.value || 0);
-        const restroom = document.getElementById('restroom')?.checked ? pricing.commercial.restroom : 0;
-        estimate = pricing.commercial.base + sqft * pricing.commercial.sqft + restroom;
-      } else if (type === 'airbnb') {
-        const airbnbType = document.getElementById('airbnbType').value;
-        const restocking = document.getElementById('restocking')?.checked ? pricing.airbnb.restocking : 0;
-        const laundryAirbnb = document.getElementById('laundryAirbnb')?.checked ? pricing.airbnb.laundry : 0;
-        estimate = pricing.airbnb[airbnbType] + restocking + laundryAirbnb;
-      }
-
-      if (estimate > 0) {
-        document.getElementById('estimateResult').textContent = `$${estimate.toFixed(2)}`;
-        document.getElementById('nextSteps').classList.remove('hidden');
-      } else {
-        document.getElementById('estimateResult').textContent = "Please fill in all required fields.";
-        document.getElementById('nextSteps').classList.add('hidden');
-      }
-    });
   </script>
 </body>
 </html>

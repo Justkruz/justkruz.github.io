@@ -3,50 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="description" content="Morning Dew Cleaning Crew - Eco-friendly, professional cleaning services for homes, offices, and Airbnb in Virginia Beach."/>
-  <meta name="keywords" content="cleaning, eco-friendly, residential cleaning, commercial cleaning, Airbnb cleaning"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Morning Dew Cleaning Crew</title>
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- AOS (Animate On Scroll) -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       scroll-behavior: smooth;
-    }
-    .fade-in-down {
-      opacity: 0;
-      transform: translateY(-20px);
-      animation: fadeInDown 0.8s forwards;
-    }
-    @keyframes fadeInDown {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .fade-in-up {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
-    }
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .testimonial-slide {
-      display: none;
-    }
-    .testimonial-slide.active {
-      display: block;
     }
   </style>
 </head>
@@ -55,93 +24,18 @@
   <nav class="w-full fixed top-0 left-0 z-50 bg-white shadow-sm">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <div class="text-xl font-bold text-green-600">Morning Dew Cleaning Crew</div>
-      <button class="md:hidden text-gray-700" id="menuBtn">
-        <i class="fas fa-bars fa-2x"></i>
-      </button>
-      <ul class="hidden md:flex space-x-6 font-medium">
-        <li><a href="#about" class="hover:text-green-600">About</a></li>
-        <li><a href="#services" class="hover:text-green-600">Services</a></li>
-        <li><a href="#pricing" class="hover:text-green-600">Pricing</a></li>
-        <li><a href="#estimate" class="hover:text-green-600">Get an Estimate</a></li>
-        <li><a href="#contact" class="hover:text-green-600">Contact</a></li>
-      </ul>
     </div>
-    <ul id="mobileMenu" class="bg-white w-full hidden flex-col space-y-4 px-4 py-4 md:hidden border-t">
-      <li><a href="#about" class="block hover:text-green-600">About</a></li>
-      <li><a href="#services" class="block hover:text-green-600">Services</a></li>
-      <li><a href="#pricing" class="block hover:text-green-600">Pricing</a></li>
-      <li><a href="#estimate" class="block hover:text-green-600">Get an Estimate</a></li>
-      <li><a href="#contact" class="block hover:text-green-600">Contact</a></li>
-    </ul>
   </nav>
 
   <!-- HERO SECTION -->
-  <header class="h-screen w-full flex flex-col justify-center items-center bg-gradient-to-b from-green-600 to-green-400 text-white relative overflow-hidden pt-20">
+  <header class="h-screen w-full flex flex-col justify-center items-center bg-green-500 text-white relative pt-20">
     <div class="container mx-auto text-center px-4">
-      <h1 class="text-4xl md:text-5xl font-bold fade-in-down mb-4">Help on the Way to a Cleaner Day</h1>
-      <p class="text-lg md:text-xl fade-in-up mb-8">Professional, eco-friendly cleaning services for homes, offices, and Airbnb properties.</p>
-      <a href="#estimate" class="inline-block bg-white text-green-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition">Request a Free Quote</a>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Help on the Way to a Cleaner Day</h1>
+      <p class="text-lg md:text-xl mb-8">Professional, eco-friendly cleaning services for homes, offices, and Airbnb properties.</p>
     </div>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-16" data-aos="fade-up">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-green-600 mb-6">About Us</h2>
-      <p class="text-lg leading-relaxed">
-        At Morning Dew Cleaning Crew, we believe a fresh, clean environment can brighten your day and foster productivity.  
-        Locally owned in Virginia Beach, our dedicated team uses non-toxic, eco-friendly products to ensure safe, sparkling spaces. 
-        We tailor our services to your unique needs, delivering reliable, detail-oriented results every time.
-      </p>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="py-16 bg-white" data-aos="fade-up">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-green-600 mb-10">Our Services</h2>
-      <div class="grid md:grid-cols-4 gap-8">
-        <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition">
-          <i class="fas fa-home text-green-600 text-4xl mb-4"></i>
-          <h3 class="font-semibold text-xl mb-2">Residential Cleaning</h3>
-          <p class="text-sm leading-relaxed">Regular upkeep, deep cleans, and move-in/move-out services to keep your home shining.</p>
-        </div>
-        <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition">
-          <i class="fas fa-building text-green-600 text-4xl mb-4"></i>
-          <h3 class="font-semibold text-xl mb-2">Commercial Cleaning</h3>
-          <p class="text-sm leading-relaxed">Offices, retail spaces, and restaurants—all maintained to impress your clients.</p>
-        </div>
-        <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition">
-          <i class="fas fa-bed text-green-600 text-4xl mb-4"></i>
-          <h3 class="font-semibold text-xl mb-2">Airbnb Turnovers</h3>
-          <p class="text-sm leading-relaxed">Fast, thorough turnovers so every guest checks into a spotless, welcoming property.</p>
-        </div>
-        <div class="bg-gray-100 p-6 rounded-lg text-center hover:shadow-lg transition">
-          <i class="fas fa-sparkles text-green-600 text-4xl mb-4"></i>
-          <h3 class="font-semibold text-xl mb-2">Specialty Add-Ons</h3>
-          <p class="text-sm leading-relaxed">Oven interiors, fridge cleaning, window washing, carpet spot treatments, and more.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing" class="py-16 bg-gray-50" data-aos="fade-up">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-green-600 mb-6">Pricing</h2>
-      <p class="max-w-xl mx-auto mb-10">Below is our basic estimate price sheet. Actual prices may vary based on property size, condition, and frequency. For a personalized quote, use our estimate form below.</p>
-      <ul class="space-y-3 text-gray-700">
-        <li><strong>Residential Regular Cleaning:</strong> From $100</li>
-        <li><strong>Residential Deep Cleaning:</strong> From $175</li>
-        <li><strong>Move-In/Move-Out:</strong> From $200</li>
-        <li><strong>Commercial (Offices):</strong> From $150</li>
-        <li><strong>Airbnb Turnovers:</strong> From $100</li>
-        <li><strong>Add-Ons:</strong> Oven ($30), Fridge ($25), Windows ($5 each), Carpet Spots ($50/area)</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ESTIMATE FORM -->
+  <!-- ESTIMATE SECTION -->
   <section id="estimate" class="py-16 bg-gray-50">
     <div class="max-w-lg mx-auto px-4">
       <h2 class="text-3xl font-bold text-green-600 text-center mb-8">Get Your Custom Estimate</h2>
@@ -156,13 +50,17 @@
             <option value="airbnb">Airbnb Turnover</option>
           </select>
         </div>
+        
         <!-- Dynamic Fields -->
         <div id="dynamicFields"></div>
+
         <!-- Calculate Button -->
         <button type="button" id="calculateEstimate" class="w-full bg-green-600 text-white font-semibold py-3 rounded hover:bg-green-700 transition">
           Calculate Estimate
         </button>
       </form>
+
+      <!-- Estimate Display -->
       <div class="mt-6 p-4 bg-white border border-gray-300 rounded">
         <h3 class="font-semibold text-lg mb-2">Your Estimated Price:</h3>
         <p id="estimateResult" class="text-xl font-bold text-green-600">$0.00</p>
@@ -172,36 +70,78 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="py-16 bg-white" data-aos="fade-up">
+  <section id="contact" class="py-16 bg-white">
     <div class="max-w-xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold text-green-600 mb-6">Contact Us</h2>
       <p class="leading-relaxed mb-4">Have questions or ready to book? We’d love to hear from you!</p>
       <p class="mb-2"><strong>Phone:</strong> +1 (757) 802-7170</p>
       <p class="mb-2"><strong>Email:</strong> justkruz@morningdewcleaningcrew.com</p>
-      <p><strong>Service Area:</strong> Virginia Beach & Surrounding Areas</p>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="bg-gray-800 text-white py-6 text-center">
-    <p>&copy; <span id="year"></span> Morning Dew Cleaning Crew. All Rights Reserved.</p>
-    <p>Fresh. Clean. Reliable.</p>
+    <p>&copy; 2024 Morning Dew Cleaning Crew. All Rights Reserved.</p>
   </footer>
 
+  <!-- SCRIPT -->
   <script>
-    // Update dynamic fields
+    const pricing = {
+      residential: { base: 100, bedroom: 20, bathroom: 15 },
+      commercial: { base: 150, sqft: 0.10 },
+      airbnb: { light: 75, deep: 125 }
+    };
+
+    const form = document.getElementById("estimateForm");
     const propertyType = document.getElementById("propertyType");
     const dynamicFields = document.getElementById("dynamicFields");
     const estimateResult = document.getElementById("estimateResult");
 
+    // Populate Dynamic Fields
     propertyType.addEventListener("change", () => {
       const type = propertyType.value;
-      dynamicFields.innerHTML = ""; // Clear dynamic fields
+      dynamicFields.innerHTML = "";
+
       if (type === "residential") {
         dynamicFields.innerHTML = `
-          <label>Number of Bedrooms:</label><input type="number" class="form-control" id="bedrooms">
-          <label>Number of Bathrooms:</label><input type="number" class="form-control" id="bathrooms">`;
+          <label for="bedrooms">Number of Bedrooms:</label>
+          <input type="number" id="bedrooms" class="w-full border border-gray-300 rounded p-2" placeholder="e.g., 3" />
+          <label for="bathrooms">Number of Bathrooms:</label>
+          <input type="number" id="bathrooms" class="w-full border border-gray-300 rounded p-2" placeholder="e.g., 2" />
+        `;
+      } else if (type === "commercial") {
+        dynamicFields.innerHTML = `
+          <label for="sqft">Square Footage:</label>
+          <input type="number" id="sqft" class="w-full border border-gray-300 rounded p-2" placeholder="e.g., 1000" />
+        `;
+      } else if (type === "airbnb") {
+        dynamicFields.innerHTML = `
+          <label for="airbnbType">Turnover Type:</label>
+          <select id="airbnbType" class="w-full border border-gray-300 rounded p-2">
+            <option value="light">Light Cleaning</option>
+            <option value="deep">Deep Cleaning</option>
+          </select>
+        `;
       }
+    });
+
+    // Calculate Estimate
+    document.getElementById("calculateEstimate").addEventListener("click", () => {
+      let estimate = 0;
+      const type = propertyType.value;
+
+      if (type === "residential") {
+        const bedrooms = parseInt(document.getElementById("bedrooms")?.value || 0);
+        const bathrooms = parseInt(document.getElementById("bathrooms")?.value || 0);
+        estimate = pricing.residential.base + (bedrooms * pricing.residential.bedroom) + (bathrooms * pricing.residential.bathroom);
+      } else if (type === "commercial") {
+        const sqft = parseInt(document.getElementById("sqft")?.value || 0);
+        estimate = pricing.commercial.base + (sqft * pricing.commercial.sqft);
+      } else if (type === "airbnb") {
+        const airbnbType = document.getElementById("airbnbType")?.value;
+        estimate = pricing.airbnb[airbnbType];
+      }
+
+      estimateResult.textContent = `$${estimate.toFixed(2)}`;
     });
   </script>
 </body>

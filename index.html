@@ -166,10 +166,9 @@
     </div>
   </section>
 
-  <!-- ESTIMATE FORM -->
-  <section id="estimate" class="py-16 bg-gray-50" data-aos="fade-up">
+ <section id="estimate" class="py-16 bg-gray-50">
   <div class="max-w-lg mx-auto px-4">
-    <h2 class="text-3xl font-bold text-green-600 text-center mb-8">Get Your Cleaning Estimate</h2>
+    <h2 class="text-3xl font-bold text-green-600 text-center mb-8">Get Your Custom Estimate</h2>
     <form id="estimateForm" class="space-y-4">
       <!-- Property Type -->
       <div>
@@ -178,54 +177,27 @@
           <option value="">Select One</option>
           <option value="residential">Residential</option>
           <option value="commercial">Commercial</option>
-          <option value="airbnb">Airbnb</option>
+          <option value="airbnb">Airbnb Turnover</option>
         </select>
       </div>
 
-      <!-- Service Type -->
-      <div>
-        <label for="serviceType" class="block font-semibold">Service Type *</label>
-        <select id="serviceType" name="serviceType" required class="w-full border border-gray-300 rounded p-2">
-          <option value="">Select One</option>
-          <option value="regular">Regular Cleaning</option>
-          <option value="deep">Deep Cleaning</option>
-          <option value="move-in-out">Move-In/Move-Out</option>
-        </select>
-      </div>
-
-      <!-- Square Footage -->
-      <div>
-        <label for="squareFootage" class="block font-semibold">Approx. Square Footage</label>
-        <input type="number" id="squareFootage" name="squareFootage" class="w-full border border-gray-300 rounded p-2" placeholder="e.g., 2000"/>
-      </div>
+      <!-- Dynamic Subcategory Options -->
+      <div id="subCategoryContainer"></div>
 
       <!-- Add-Ons -->
-      <div class="space-y-2">
-        <span class="font-semibold block">Add-Ons (Optional):</span>
-        <div class="flex items-center space-x-2">
-          <input type="checkbox" id="addonOven" name="addonOven" class="h-4 w-4"/>
-          <label for="addonOven">Oven Cleaning (+$30)</label>
-        </div>
-        <div class="flex items-center space-x-2">
-          <input type="checkbox" id="addonFridge" name="addonFridge" class="h-4 w-4"/>
-          <label for="addonFridge">Fridge Cleaning (+$25)</label>
-        </div>
-        <div>
-          <label for="addonWindows" class="block">Number of Windows (+$5 each):</label>
-          <input type="number" id="addonWindows" class="border border-gray-300 rounded p-2 w-24" placeholder="0"/>
-        </div>
-        <div>
-          <label for="addonCarpet" class="block">Carpet Spots (+$50 each):</label>
-          <input type="number" id="addonCarpet" class="border border-gray-300 rounded p-2 w-24" placeholder="0"/>
-        </div>
-      </div>
+      <div id="addOnsContainer"></div>
+
+      <!-- Calculate Button -->
+      <button type="button" id="calculateEstimate" class="w-full bg-green-600 text-white font-semibold py-3 rounded hover:bg-green-700 transition">
+        Calculate Estimate
+      </button>
     </form>
 
     <!-- Estimate Display -->
     <div class="mt-6 p-4 bg-white border border-gray-300 rounded">
       <h3 class="font-semibold text-lg mb-2">Your Estimated Price:</h3>
       <p id="estimateResult" class="text-xl font-bold text-green-600">$0.00</p>
-      <p class="text-sm text-gray-600 mt-2">*This is an estimate. Final pricing may vary based on property condition.</p>
+      <p class="text-sm text-gray-600 mt-2">*This is an estimate. Final pricing may vary based on specifics.</p>
     </div>
   </div>
 </section>
@@ -308,51 +280,76 @@
     }
     showSlide();
     setInterval(showSlide, 5000); // change testimonial every 5 seconds
-   <script>
-  // Pricing logic
+  <script>
+  // Pricing Model
   const pricing = {
-    residential: { base: 100, sqft: 0.05 },
-    commercial: { base: 150, sqft: 0.07 },
-    airbnb: { base: 100, sqft: 0.05 }
+    residential: { base: 100, bedroom: 20, bathroom: 15, walls: 25, laundry: 30 },
+    commercial: { base: 150, sqft: 0.10, kitchen: 50 },
+    airbnb: { light: 75, deep: 125, restocking: 25 }
   };
 
-  const addons = {
-    oven: 30,
-    fridge: 25,
-    windows: 5,
-    carpet: 50
-  };
+  const form = document.getElementById("estimateForm");
+  const propertyType = document.getElementById("propertyType");
+  const subCategoryContainer = document.getElementById("subCategoryContainer");
+  const addOnsContainer = document.getElementById("addOnsContainer");
+  const estimateResult = document.getElementById("estimateResult");
 
-  const propertyType = document.getElementById('propertyType');
-  const serviceType = document.getElementById('serviceType');
-  const squareFootage = document.getElementById('squareFootage');
-  const addonOven = document.getElementById('addonOven');
-  const addonFridge = document.getElementById('addonFridge');
-  const addonWindows = document.getElementById('addonWindows');
-  const addonCarpet = document.getElementById('addonCarpet');
-  const estimateResult = document.getElementById('estimateResult');
+  // Populate Subcategories and Add-Ons Based on Property Type
+  propertyType.addEventListener("change", () => {
+    const type = propertyType.value;
 
-  function calculateEstimate() {
-    const property = propertyType.value;
-    const sqft = parseFloat(squareFootage.value) || 0;
-    let estimate = pricing[property]?.base || 0;
-    estimate += (pricing[property]?.sqft || 0) * sqft;
+    subCategoryContainer.innerHTML = "";
+    addOnsContainer.innerHTML = "";
 
-    // Add-ons
-    if (addonOven.checked) estimate += addons.oven;
-    if (addonFridge.checked) estimate += addons.fridge;
-    estimate += (parseInt(addonWindows.value) || 0) * addons.windows;
-    estimate += (parseInt(addonCarpet.value) || 0) * addons.carpet;
+    if (type === "residential") {
+      subCategoryContainer.innerHTML = `
+        <label for="residentialType" class="block font-semibold">Type *</label>
+        <select id="residentialType" class="w-full border border-gray-300 rounded p-2">
+          <option value="house">House</option>
+          <option value="apartment">Apartment</option>
+          <option value="manufactured">Manufactured Home</option>
+        </select>
+        <div class="mt-4">
+          <label for="bedrooms" class="block font-semibold">Number of Bedrooms</label>
+          <input type="number" id="bedrooms" class="w-full border border-gray-300 rounded p-2" placeholder="e.g., 3"/>
+        </div>
+        <div class="mt-4">
+          <label for="bathrooms" class="block font-semibold">Number of Bathrooms</label>
+          <input type="number" id="bathrooms" class="w-full border border-gray-300 rounded p-2" placeholder="e.g., 2"/>
+        </div>`;
+      addOnsContainer.innerHTML = `
+        <div class="flex items-center space-x-2 mt-4">
+          <input type="checkbox" id="addonWalls" class="h-4 w-4"/>
+          <label for="addonWalls">Walls/Baseboards (+$25)</label>
+        </div>
+        <div class="flex items-center space-x-2 mt-4">
+          <input type="checkbox" id="addonLaundry" class="h-4 w-4"/>
+          <label for="addonLaundry">Laundry Room (+$30)</label>
+        </div>`;
+    }
 
-    estimateResult.textContent = `$${estimate.toFixed(2)}`;
-  }
+    // Add more conditions for "commercial" and "airbnb"...
 
-  [propertyType, serviceType, squareFootage, addonOven, addonFridge, addonWindows, addonCarpet].forEach(field => {
-    field.addEventListener('input', calculateEstimate);
   });
 
-  // Run initial calculation
-  calculateEstimate();
+  // Calculate Estimate
+  document.getElementById("calculateEstimate").addEventListener("click", () => {
+    let estimate = 0;
+    const type = propertyType.value;
+
+    if (type === "residential") {
+      const bedrooms = parseInt(document.getElementById("bedrooms")?.value || 0);
+      const bathrooms = parseInt(document.getElementById("bathrooms")?.value || 0);
+      const walls = document.getElementById("addonWalls")?.checked ? pricing.residential.walls : 0;
+      const laundry = document.getElementById("addonLaundry")?.checked ? pricing.residential.laundry : 0;
+
+      estimate = pricing.residential.base + bedrooms * pricing.residential.bedroom + bathrooms * pricing.residential.bathroom + walls + laundry;
+    }
+
+    // Add calculations for "commercial" and "airbnb"...
+
+    estimateResult.textContent = `$${estimate.toFixed(2)}`;
+  });
 </script>
 </body>
 </html>

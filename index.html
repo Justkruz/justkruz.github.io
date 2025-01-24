@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,505 +15,526 @@
     <link rel="preload" href="https://placehold.co/1200x600/4e70a2/FFFFFF?text=Your+Business+Image" as="image">
     <link rel="preload" href="path-to-font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <style>
-        /* =========================================================
-           General Reset
-           ========================================================= */
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        ul,
-        li,
-        a,
-        button,
-        input,
-        select {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            box-sizing: border-box;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-            text-decoration: none;
-            list-style: none;
-        }
-
-        :root {
-            --primary-color: #007bff;
-            --secondary-color: #0056b3;
-            --white: #fff;
-            --dark-gray: #333;
-            --light-gray: #ddd;
-        }
-
-        body {
-            font-family: sans-serif;
-            line-height: 1.6;
-            color: var(--white);
-            overflow-x: hidden;
-            background-color: #1a1a1a;
-        }
-        /* =========================================================
-            Header
+    /* =========================================================
+       General Reset
+       ========================================================= */
+    body, h1, h2, h3, h4, h5, h6, p, ul, li, a, button, input, select {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-sizing: border-box;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        text-decoration: none;
+        list-style: none;
+    }
+    :root {
+        --primary-color: #007bff;
+        --secondary-color: #0056b3;
+        --white: #fff;
+        --dark-gray: #333;
+        --light-gray: #ddd;
+        --off-white: #f9f9f9;
+        --text-color: #444;
+        --transition: 0.3s ease;
+    }
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        overflow-x: hidden;
+        background-color: var(--off-white);
+    }
+    /* =========================================================
+        Header
+        ========================================================= */
+    header {
+        background-color: var(--white);
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: background-color var(--transition);
+    }
+    .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: var(--text-color);
+    }
+    /* =========================================================
+        Navigation
+        ========================================================= */
+    nav {
+        display: flex;
+        align-items: center;
+    }
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0 15px;
+        display: inline-block;
+    }
+    nav a {
+        color: var(--text-color);
+        font-weight: 500;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: background-color var(--transition), color var(--transition);
+        white-space: nowrap;
+    }
+    nav a:hover {
+        background-color: var(--light-gray);
+    }
+    nav a[aria-current="page"],
+    nav a.active {
+        background-color: var(--primary-color);
+        color: var(--white);
+    }
+    /* =========================================================
+            Mobile Navigation
             ========================================================= */
-        header {
-            background-color: #2a2a2a;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            top: 0;
-            z-index: 1000;
-            min-height: 70px;
-
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--white);
-        }
-        /* =========================================================
-            Navigation
-           ========================================================= */
-        nav {
-            display: flex;
-            align-items: center;
-            transition: background-color 0.5s ease;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-            display: inline-block;
-        }
-
-        nav a {
-            color: var(--white);
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            white-space: nowrap;
-        }
-
-        nav a:hover {
-            background-color: #444;
-        }
-
-        nav a[aria-current="page"],
-        nav a.active {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            transition: background-color 0.3s ease;
-        }
-        /* =========================================================
-             Mobile Navigation
-            ========================================================= */
+    .menu-toggle {
+        display: none;
+        cursor: pointer;
+        font-size: 1.8rem;
+        padding: 10px;
+    }
+    .menu-toggle span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: var(--text-color);
+        margin: 6px 0;
+        transition: background-color var(--transition);
+    }
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        width: 280px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        transition: transform var(--transition);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        transform: translateX(100%);
+    }
+    .mobile-nav.open {
+        transform: translateX(0);
+    }
+    .mobile-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .mobile-nav ul li {
+        margin: 15px 0;
+    }
+    .mobile-nav ul li a {
+        display: block;
+        color: var(--white);
+        font-size: 1.2rem;
+    }
+    .menu-toggle.open span {
+        background-color: var(--white);
+    }
+     /* =========================================================
+        Mobile and Desktop Styles
+        ========================================================= */
+    @media (min-width: 768px) {
         .menu-toggle {
             display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            padding: 10px;
         }
-
-        .menu-toggle span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: var(--white);
-            margin: 5px 0;
-            transition: background-color 0.3s ease;
-        }
-
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: 0;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-            width: 250px;
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-            z-index: 1000;
+         nav ul{
             display: flex;
-            flex-direction: column;
-            overflow-y: auto;
-            transform: translateX(100%);
         }
-
-        .mobile-nav.open {
-            transform: translateX(0);
-        }
-
-        .mobile-nav ul {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .mobile-nav ul li {
-            margin: 10px 0;
-        }
-
-        .mobile-nav ul li a {
-            display: block;
-        }
-
-        .menu-toggle.open span {
-            background-color: var(--white);
-        }
-
-         /* =========================================================
-            Mobile and Desktop Styles
-            ========================================================= */
-        @media (min-width: 768px) {
-            .menu-toggle {
-                display: none;
-            }
-             nav ul{
-              display: flex;
-           }
-        }
-
-        @media (max-width: 767px) {
-             nav ul {
-               display: none;
-              }
-            .menu-toggle {
-                display: block;
-            }
-        }
-           /* =========================================================
-             Main
-            ========================================================= */
-        main {
-             padding: 20px;
-        }
-        /* =========================================================
-            Sections
-           ========================================================= */
-        section {
-             margin-bottom: 40px;
-             padding: 20px;
-            position: relative;
-        }
-        /* =========================================================
-            Home Section
-           ========================================================= */
-        #home {
-            position: relative;
-            text-align: center;
-            color: var(--white);
-            overflow: hidden;
-        }
-
-
-        .hero-content {
-            padding: 100px 20px;
-            position: relative;
-        }
-
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            line-height: 1.4;
-        }
-
-        .hero-content .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        /* =========================================================
-            About Section
-           ========================================================= */
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .gallery-placeholder {
-            margin-top: 20px;
-            border: 2px dashed var(--light-gray);
-            padding: 50px;
-            width: 80%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        /* =========================================================
-            Services Section
-           ========================================================= */
-        .services-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .service-card {
-            border: 1px solid var(--light-gray);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            flex: 1 1 250px;
-            max-width: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: var(--dark-gray);
-        }
-
-        .service-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            margin-bottom: 15px;
-        }
-
-        .service-card .service-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .service-card a {
-            color: var(--primary-color);
-        }
-         /* =========================================================
-            Pricing Section
-           ========================================================= */
-        #pricing-section .pricing-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        #pricing-section .pricing-content h2 {
-            margin-bottom: 20px;
-        }
-
-        #pricing-section .estimate-calculator {
-            background-color: #2a2a2a;
-            padding: 20px;
-            border-radius: 8px;
-            width: 100%;
-            max-width: 500px;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-        }
-
-        #pricing-section .form-group {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 15px;
-        }
-
-        #pricing-section .form-group label {
-            margin-bottom: 5px;
-            text-align: left;
-        }
-
-        #pricing-section .form-group select,
-        #pricing-section .form-group input {
-            padding: 10px;
-            border: 1px solid var(--light-gray);
-            border-radius: 5px;
-            font-size: 1em;
-        }
-         /* =========================================================
-           Testimonial Section
-           ========================================================= */
-       #testimonials .testimonial-carousel {
-           width: 80%;
-            margin: 20px auto;
-            overflow: hidden;
-            position: relative;
-       }
-        #testimonials .testimonial-container {
-           display: flex;
-           transition: transform 0.6s ease-in-out;
-        }
-        #testimonials .testimonial {
-           flex: 0 0 100%;
-           min-width: 100%;
-           padding: 20px;
-          text-align: center;
-        }
-        #testimonials .carousel-controls {
-           text-align: center;
-           margin-top: 10px;
-           position: relative;
-       }
-        #testimonials .carousel-controls button {
-            background-color: var(--primary-color);
-           color: var(--white);
-           border-radius: 5px;
-          cursor: pointer;
-            margin: 0 5px;
-            padding: 10px 15px;
-        }
-        #testimonials .carousel-controls button:hover {
-            background-color: var(--secondary-color);
-        }
-        .carousel-indicators {
-           text-align: center;
-           margin-top: 10px;
-       }
-        .carousel-indicators .dot {
-           display: inline-block;
-            width: 10px;
-           height: 10px;
-           background-color: var(--light-gray);
-          border-radius: 50%;
-            margin: 0 5px;
-           cursor: pointer;
-       }
-       .carousel-indicators .dot.active {
-           background-color: var(--primary-color);
-       }
-        /* =========================================================
-            FAQ Section
-           ========================================================= */
-        .faq-section {
-            margin: 20px;
-        }
-        .faq-section details {
-          background-color: rgba(240,240,240, 0.2);
-           margin-bottom: 10px;
-       }
-       .faq-section summary {
-           display: block;
-            width: 100%;
-           padding: 10px;
-           text-align: left;
-           background-color: #444;
-           color: var(--white);
-           cursor: pointer;
-           transition: background-color 0.3s ease;
-           list-style: none;
-         }
-      .faq-section summary:hover {
-          background-color: #555;
-      }
-        .faq-section div {
-          margin-bottom: 10px;
-      }
-        /* =========================================================
-            Contact Section
-           ========================================================= */
-          /* =========================================================
-            Shared Button Styles
-           ========================================================= */
-          button,
-         .cta-button {
-             background-color: var(--primary-color);
-             color: var(--white);
-              border-radius: 5px;
-              cursor: pointer;
-              transition: background-color 0.3s ease;
-              padding: 10px 20px;
-             white-space: nowrap;
-           }
-
-           button:hover,
-          .cta-button:hover {
-              background-color: var(--secondary-color);
+    }
+    @media (max-width: 767px) {
+         nav ul {
+           display: none;
           }
-          /* =========================================================
-            Footer
-           ========================================================= */
-        footer {
-             background-color: var(--dark-gray);
-             color: var(--white);
-              text-align: center;
-             padding: 10px 0;
-              display: flex;
-              justify-content: space-around;
-             align-items: center;
-            flex-wrap: wrap;
-         }
-
-        footer p,
-        footer a {
-            margin: 5px;
-            color: var(--white);
+        .menu-toggle {
+            display: block;
         }
-         /* =========================================================
-            Error Messages
-            ========================================================= */
-        .error-message {
-           color: red;
-             font-size: 0.9rem;
-            margin-top: 2px;
-             display: block;
+    }
+     /* =========================================================
+        Main
+        ========================================================= */
+    main {
+        padding: 30px;
+    }
+    /* =========================================================
+        Sections
+        ========================================================= */
+    section {
+        margin-bottom: 50px;
+        padding: 30px;
+        position: relative;
+    }
+    section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        text-align: center;
+        color: var(--text-color);
+    }
+    section p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+         color: var(--text-color);
+    }
+    /* =========================================================
+        Home Section
+        ========================================================= */
+    #home {
+        position: relative;
+        text-align: center;
+        color: var(--white);
+        overflow: hidden;
+        background-color: #f0f0f0;
+        padding: 100px 20px;
+    }
+     #home::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.6;
+        z-index: -1;
+        background-image: url('https://placehold.co/1200x600/4e70a2/FFFFFF?text=Your+Business+Image');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .hero-content {
+        position: relative;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+         color: var(--white);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+        line-height: 1.5;
+        color: var(--white);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    .hero-content .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    .hero-content img {
+            display: block;
+            margin: 20px auto 0;
+            max-width: 100%;
+            aspect-ratio: 16 / 9; /* Standard widescreen aspect ratio */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    /* =========================================================
+        About Section
+        ========================================================= */
+    #about {
+        background-color: var(--white);
+    }
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .gallery-placeholder {
+        margin-top: 30px;
+        border: 2px dashed var(--light-gray);
+        padding: 60px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+    }
+    .gallery-placeholder img {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform var(--transition);
+    }
+        .gallery-placeholder img:hover {
+        transform: scale(1.05);
         }
-        /* =========================================================
-           Spinner
-            ========================================================= */
+    /* =========================================================
+        Services Section
+        ========================================================= */
+    #services {
+       background-color: var(--off-white);
+    }
+    .services-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .service-card {
+        border: 1px solid var(--light-gray);
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        flex: 1 1 300px;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--white);
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         transition: transform var(--transition);
+    }
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+    .service-card h3 {
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+        color: var(--text-color);
+    }
+    .service-card p {
+        margin-bottom: 20px;
+         color: var(--text-color);
+    }
+    .service-card .service-icon {
+        font-size: 4rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+    /* =========================================================
+        Pricing Section
+        ========================================================= */
+    #pricing-section {
+       background-color: var(--white);
+    }
+    #pricing-section .pricing-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    #pricing-section .pricing-content h2 {
+        margin-bottom: 30px;
+         color: var(--text-color);
+    }
+    #pricing-section .estimate-calculator {
+        background-color: var(--off-white);
+        padding: 30px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    #pricing-section .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    #pricing-section .form-group label {
+        margin-bottom: 8px;
+        text-align: left;
+        color: var(--text-color);
+    }
+    #pricing-section .form-group select,
+    #pricing-section .form-group input {
+        padding: 12px;
+        border: 1px solid var(--light-gray);
+        border-radius: 5px;
+        font-size: 1.1em;
+    }
+    /* =========================================================
+        Testimonial Section
+        ========================================================= */
+    #testimonials {
+       background-color: var(--off-white);
+    }
+    #testimonials .testimonial-carousel {
+       width: 90%;
+        margin: 30px auto;
+        overflow: hidden;
+        position: relative;
+    }
+    #testimonials .testimonial-container {
+       display: flex;
+       transition: transform 0.6s ease-in-out;
+    }
+    #testimonials .testimonial {
+       flex: 0 0 100%;
+       min-width: 100%;
+       padding: 30px;
+      text-align: center;
+    }
+    #testimonials .testimonial p {
+          font-size: 1.2rem;
+           color: var(--text-color);
+    }
+       #testimonials .testimonial span {
+          display: block;
+          margin-top: 10px;
+          font-style: italic;
+          color: var(--dark-gray);
+      }
+    #testimonials .carousel-controls {
+       text-align: center;
+       margin-top: 20px;
+       position: relative;
+   }
+    #testimonials .carousel-controls button {
+        background-color: var(--primary-color);
+       color: var(--white);
+       border-radius: 5px;
+      cursor: pointer;
+        margin: 0 8px;
+        padding: 12px 20px;
+        transition: background-color var(--transition);
+    }
+    #testimonials .carousel-controls button:hover {
+        background-color: var(--secondary-color);
+    }
+    .carousel-indicators {
+       text-align: center;
+       margin-top: 20px;
+    }
+    .carousel-indicators .dot {
+       display: inline-block;
+        width: 12px;
+       height: 12px;
+       background-color: var(--light-gray);
+      border-radius: 50%;
+        margin: 0 6px;
+       cursor: pointer;
+       transition: background-color var(--transition);
+    }
+    .carousel-indicators .dot.active {
+        background-color: var(--primary-color);
+    }
+    /* =========================================================
+        FAQ Section
+        ========================================================= */
+    #faq {
+        background-color: var(--white);
+    }
+    .faq-section {
+        margin: 30px;
+    }
+    .faq-section details {
+        background-color: var(--off-white);
+        margin-bottom: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+    .faq-section summary {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        text-align: left;
+        background-color: #f0f0f0;
+        color: var(--text-color);
+        cursor: pointer;
+        transition: background-color var(--transition);
+        list-style: none;
+        border-radius: 8px;
+        font-weight: 500;
+    }
+    .faq-section summary:hover {
+        background-color: #e0e0e0;
+    }
+    .faq-section div {
+        margin: 15px;
+         color: var(--text-color);
+    }
+    /* =========================================================
+        Contact Section
+        ========================================================= */
+    #contact {
+        background-color: var(--off-white);
+    }
+    /* =========================================================
+        Shared Button Styles
+        ========================================================= */
+    button,
+    .cta-button {
+        background-color: var(--primary-color);
+        color: var(--white);
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color var(--transition);
+        padding: 12px 25px;
+        white-space: nowrap;
+        font-size: 1.1rem;
+    }
+    button:hover,
+    .cta-button:hover {
+        background-color: var(--secondary-color);
+    }
+    /* =========================================================
+        Footer
+        ========================================================= */
+    footer {
+        background-color: var(--dark-gray);
+        color: var(--white);
+        text-align: center;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 50px;
+    }
+    footer p,
+    footer a {
+        margin: 8px;
+        color: var(--white);
+    }
+      /* =========================================================
+        Error Messages
+        ========================================================= */
+    .error-message {
+        color: red;
+        font-size: 0.9rem;
+        margin-top: 2px;
+        display: block;
+    }
+      /* =========================================================
+       Spinner
+        ========================================================= */
         .spinner {
             display: none;
             margin-top: 10px;
             font-style: italic;
         }
-        /* =========================================================
-           Header Themes
-            ========================================================= */
-        .theme-1 header {
-          background-color: #f0f0f0;
-      }
-       .theme-2 header {
-           background-color: #e0f7fa;
-      }
-        .theme-3 header {
-           background-color: #d1c4e9;
+     /* =========================================================
+        Focus Styles
+        ========================================================= */
+        button:focus,
+        a:focus {
+            outline: 2px solid var(--primary-color);
         }
-      .theme-4 header {
-            background-color: #ffe0b2;
-       }
-        .theme-5 header {
-           background-color: #c8e6c9;
-       }
-       .theme-6 header {
-           background-color: #ffccbc;
-       }
-       .theme-7 header {
-           background-color: #f8bbd0;
-      }
-       /* =========================================================
-            Focus Styles
-            ========================================================= */
-         button:focus,
-          a:focus {
-               outline: 2px solid var(--primary-color);
-          }
-        /* =========================================================
-            Dark Theme
-           ========================================================= */
-          .dark-theme {
-              background-color: var(--dark-gray);
-               color: var(--white);
-          }
     </style>
     <script type="application/ld+json">
         {
@@ -616,7 +636,7 @@
         </div>
         <nav class="mobile-nav" id="mobileMenu">
             <ul class="mobile-ul">
-                <li><a href="#home" data-section="home" aria-current="page">Home</a></li>
+                 <li><a href="#home" data-section="home" aria-current="page">Home</a></li>
                 <li><a href="#about" data-section="about">About Us</a></li>
                 <li><a href="#services" data-section="services">Services</a></li>
                 <li><a href="#pricing-section" data-section="pricing-section">Pricing</a></li>
@@ -638,26 +658,25 @@
                         More</button>
                 </div>
             </div>
-            <img src="https://placehold.co/1200x600/4e70a2/FFFFFF?text=Your+Business+Image"
-                alt="Professional cleaning services image" loading="lazy"
-                style="display: block; margin: 0 auto; max-width: 100%; aspect-ratio: 2 / 1; height: auto;"
-                onerror="this.src='https://placehold.co/1200x600/4e70a2/FFFFFF?text=Default+Image';"
-                data-src="https://placehold.co/1200x600/4e70a2/FFFFFF?text=Your+Business+Image" />
+              <img src="https://placehold.co/1200x600/4e70a2/FFFFFF?text=Your+Business+Image"
+                 alt="Professional cleaning services image" loading="lazy"
+                 onerror="this.src='https://placehold.co/1200x600/4e70a2/FFFFFF?text=Default+Image';"
+                 data-src="https://placehold.co/1200x600/4e70a2/FFFFFF?text=Your+Business+Image" />
         </section>
         <section id="about">
+            <h2>About Us</h2>
             <div class="about-content">
-                <h2>About Us</h2>
                 <p>Company mission, vision, video/photo gallery.</p>
                 <div class="gallery-placeholder">
                     <img src="https://placehold.co/300x200/4e70a2/FFFFFF?text=Placeholder+Image"
-                        alt="Placeholder For Video Or Gallery" style="max-width: 100%;"
+                        alt="Placeholder For Video Or Gallery"
                         onerror="this.src='https://placehold.co/300x200/4e70a2/FFFFFF?text=Default+Image';"
                         data-src="https://placehold.co/300x200/4e70a2/FFFFFF?text=Placeholder+Image" />
                 </div>
             </div>
         </section>
         <section id="services">
-            <h2>Services</h2>
+            <h2>Our Services</h2>
             <div class="services-container">
                 <div class="service-card">
                     <div class="service-icon">🏠</div>
@@ -680,7 +699,7 @@
                     <button class="cta-button" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });"
                         aria-label="Read Testimonials for Airbnb Turnover">Read Testimonials</button>
                 </div>
-                <div class="service-card">
+                 <div class="service-card">
                    <div class="service-icon">✨</div>
                     <h3>Add-Ons</h3>
                      <p>Additional services for a deeper clean.</p>
@@ -689,11 +708,11 @@
             </div>
         </section>
         <section id="pricing-section">
+            <h2>Get an Estimate</h2>
             <div class="pricing-content">
-                <h2>Get an Estimate</h2>
                 <p>Fill out the form below to get an instant estimate for your cleaning services.</p>
                 <div class="estimate-calculator">
-                   <div id="error-container"></div>
+                    <div id="error-container"></div>
                     <form id="estimateForm">
                         <div class="form-group">
                             <label for="propertyType">Property Type:</label>
@@ -719,7 +738,7 @@
                             <input type="number" id="bathrooms" placeholder="e.g., 2 bathrooms" required min="0"
                                 aria-label="Enter Number of Bathrooms" title="Enter number of bathrooms">
                         </div>
-                        <div class="form-group">
+                           <div class="form-group">
                                  <label for="addOns">Add-Ons (Optional):</label>
                                   <select id="addOns" multiple aria-label="Select Add-Ons">
                                       <option value="carpet">Carpet Cleaning</option>
@@ -728,7 +747,7 @@
                                         <option value="eco">Eco-Friendly Products</option>
                                  </select>
                        </div>
-                        <div class="form-group">
+                         <div class="form-group">
                            <label for="cleanType">Service Type:</label>
                               <select id="cleanType" required  aria-label="Select Service Type">
                                  <option value="regular">Regular Cleaning</option>
@@ -740,12 +759,12 @@
                     </form>
                     <div class="estimate-result" aria-live="polite"></div>
                     <p class="disclaimer">This is an estimate. Final pricing may vary based on specific requirements.</p>
-                    <div class="spinner">Calculating...</div>
+                      <div class="spinner">Calculating...</div>
                 </div>
             </div>
         </section>
         <section id="testimonials">
-            <h2>Testimonials</h2>
+            <h2>What Our Clients Say</h2>
            <div class="testimonial-carousel">
                 <div class="testimonial-container">
                     <div class="testimonial">
@@ -772,8 +791,8 @@
             <h2>Contact Us</h2>
             <p>Contact form, Google Maps, social media links.</p>
         </section>
-         <section id="faq" class="faq-section">
-            <h2>FAQ</h2>
+        <section id="faq" class="faq-section">
+            <h2>Frequently Asked Questions</h2>
             <details>
                 <summary role="button" aria-expanded="false" aria-controls="faq1">What services do you offer?</summary>
                  <div id="faq1" role="region">We offer residential, commercial, and Airbnb cleaning services.</div>
@@ -791,49 +810,4 @@
         <nav aria-label="Social Media Links">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
                 aria-label="Follow us on Facebook (opens in a new tab)">Facebook</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                aria-label="Follow us on Instagram (opens in a new tab)">Instagram</a>
-            <a href="https" target="_blank" rel="noopener noreferrer"
-                aria-label="Follow us on LinkedIn (opens in a new tab)">LinkedIn</a>
-            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer"
-                aria-label="Follow us on WhatsApp (opens in a new tab)">WhatsApp</a>
-        </nav>
-    </footer>
-     <script defer>
-          function toggleFAQ(details) {
-              const isOpen = details.hasAttribute('open');
-              details.open = !isOpen;
-              details.querySelector('summary').setAttribute('aria-expanded', !isOpen)
-        }
-           document.getElementById('toggleAllFAQs').addEventListener('click', function () {
-               const allFAQs = document.querySelectorAll('.faq-section details');
-                const isOpen = this.textContent === 'Show All'
-             allFAQs.forEach(faq => faq.open = isOpen);
-               this.textContent = isOpen ? 'Hide All' : 'Show All';
-           });
-        function debounce(func, wait) {
-            let timeout;
-            return function (...args) {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => func.apply(this, args), wait);
-            };
-        }
-        function showError(input, message) {
-             let error = input.parentElement.querySelector('.error-message');
-             if (!error) {
-                error = document.createElement('div');
-               error.className = 'error-message';
-                 input.parentElement.appendChild(error);
-            }
-            error.textContent = message;
-           input.style.borderColor = 'red';
-        }
-       function clearError(input) {
-           const error = input.parentElement.querySelector('.error-message');
-            if (error) error.remove();
-            input.style.borderColor = '#ddd';
-        }
-        document.querySelectorAll('img').forEach(img => {
-            img.onerror = () => img.alt = 'Image not available';
-        });
-        document
+            <a href="https

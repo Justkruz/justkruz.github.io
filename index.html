@@ -1,405 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Morning Dew Cleaning Crew provides professional, eco-friendly cleaning services in Virginia Beach. Get a free estimate today!">
     <meta name="keywords" content="cleaning services, virginia beach, residential cleaning, commercial cleaning, airbnb cleaning">
     <title>Morning Dew Cleaning Crew</title>
-     <meta property="og:title" content="Morning Dew Cleaning Crew" />
-        <meta property="og:description" content="Professional cleaning services in Virginia Beach." />
-        <meta property="og:image" content="https://placehold.co/1200x630/4e70a2/FFFFFF?text=Your+Business+Image" />
-         <meta property="og:url" content="https://morningdewcleaningcrew.com" />
-         <link rel="canonical" href="https://morningdewcleaningcrew.com">
-         <link rel="preload" href="https://placehold.co/1200x600/4e70a2/FFFFFF?text=Your+Business+Image" as="image">
-        <link rel="preload" href="path-to-font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <meta property="og:title" content="Morning Dew Cleaning Crew" />
+    <meta property="og:description" content="Professional cleaning services in Virginia Beach." />
+    <meta property="og:image" content="https://placehold.co/1200x630/4e70a2/FFFFFF?text=Your+Business+Image" />
+    <meta property="og:url" content="https://morningdewcleaningcrew.com" />
+    <link rel="canonical" href="https://morningdewcleaningcrew.com">
+    <link rel="preload" href="https://placehold.co/1200x600/4e70a2/FFFFFF?text=Your+Business+Image" as="image">
+    <link rel="preload" href="path-to-font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <style>
-          /* Basic CSS Reset */
-         body, h1, h2, h3, h4, h5, h6, p, ul, li, a, button, input, select {
+        /* =========================================================
+           General Reset
+           ========================================================= */
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        ul,
+        li,
+        a,
+        button,
+        input,
+        select {
             margin: 0;
-             padding: 0;
+            padding: 0;
             border: 0;
             box-sizing: border-box;
-             font-size: 100%;
+            font-size: 100%;
             font: inherit;
-          vertical-align: baseline;
-             text-decoration: none;
-           list-style: none;
-       }
-         :root {
-            --primary-color: #007bff;
-           --secondary-color: #0056b3;
-       }
-       body {
-           font-family: sans-serif;
-           line-height: 1.6;
-            color: #fff; /* set default text to white */
-            overflow-x: hidden; /* Prevent horizontal scroll */
-            background-color: #1a1a1a; /* night mode */
+            vertical-align: baseline;
+            text-decoration: none;
+            list-style: none;
         }
 
-       header {
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #0056b3;
+            --white: #fff;
+            --dark-gray: #333;
+            --light-gray: #ddd;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            overflow-x: hidden;
+            background-color: #1a1a1a;
+        }
+        /* =========================================================
+            Header
+            ========================================================= */
+        header {
             background-color: #2a2a2a;
-            padding: 20px 0;
-          transition: background-color 0.5s ease;
+            padding: 15px 20px;
+            transition: background-color 0.5s ease;
             display: flex;
             justify-content: space-between;
             align-items: center;
-           padding: 15px 20px;
-           position: sticky;
-           top: 0;
-             z-index: 1000;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-       .logo {
+
+        .logo {
             font-size: 1.5rem;
-          font-weight: bold;
-           color: #fff;
-       }
-       nav {
-          display: flex;
-           align-items: center; /* Align items vertically */
-       }
-       nav ul {
-            display: flex;
-           justify-content: center;
-        }
-      nav ul li {
-            margin: 0 15px; /* Reduce spacing on desktop */
-          display: inline-block;
-        }
-        nav a {
-            color: #fff;
             font-weight: bold;
-            padding: 5px 10px; /* Add horizontal padding */
-           border-radius: 5px;
+            color: var(--white);
+        }
+        /* =========================================================
+            Navigation
+           ========================================================= */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            display: inline-block;
+        }
+
+        nav a {
+            color: var(--white);
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
             transition: background-color 0.3s ease, color 0.3s ease;
-           white-space: nowrap;
-      }
-      nav a:hover {
+            white-space: nowrap;
+        }
+
+        nav a:hover {
             background-color: #444;
-       }
+        }
+
+        nav a[aria-current="page"],
         nav a.active {
             background-color: var(--secondary-color);
-           color: white;
-           transition: background-color 0.3s ease;
-       }
-        /* Mobile Navigation */
-       .menu-toggle {
-           display: none; /* Hide by default */
+            color: var(--white);
+            transition: background-color 0.3s ease;
+        }
+        /* =========================================================
+             Mobile Navigation
+            ========================================================= */
+        .menu-toggle {
+            display: none;
             cursor: pointer;
             font-size: 1.5rem;
-             padding: 10px;
-      }
-        .menu-toggle span {
-          display: block;
-          width: 25px;
-            height: 3px;
-           background-color: #fff;
-           margin: 5px 0;
-             transition: background-color 0.3s ease; /* Smooth transition for color change */
+            padding: 10px;
         }
-      nav.mobile-nav {
-           position: fixed;
-           top: 0;
-          right: 0;
-           height: 100%;
-           background-color: rgba(0, 0, 0, 0.9); /* Transparent background */
-           padding: 20px;
-           width: 250px;
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            margin: 5px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            width: 250px;
             box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out; /* Slide-in animation */
-           z-index: 1000; /* Ensure it's above other content */
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
             display: flex;
             flex-direction: column;
             overflow-y: auto;
-             transform: translateX(100%);
-         }
-       nav.mobile-nav.open {
-           transform: translateX(0);
-       }
-      nav.mobile-nav ul {
-            flex-direction: column;
-           align-items: flex-start; /* Align items to the start */
-       }
-       nav.mobile-nav ul li {
-           margin: 10px 0; /* Add vertical space */
-      }
-        nav.mobile-nav ul li a {
-            display: block; /* Make the link fill the entire li */
-        }
-       .menu-toggle.open span {
-            background-color: #fff;
-        }
-        .mobile-nav.closed {
             transform: translateX(100%);
-       }
-        /* Desktop Only Styles */
+        }
+
+       .mobile-nav.open {
+            transform: translateX(0);
+        }
+
+        .mobile-nav ul {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .mobile-nav ul li {
+            margin: 10px 0;
+        }
+
+        .mobile-nav ul li a {
+            display: block;
+        }
+
+        .menu-toggle.open span {
+            background-color: var(--white);
+        }
+
+         /* =========================================================
+            Mobile and Desktop Styles
+            ========================================================= */
         @media (min-width: 768px) {
-           .menu-toggle {
-                display: none; /* Hide by default on desktop */
+            .menu-toggle {
+                display: none;
+            }
+             nav ul{
+              display: flex;
+           }
+        }
+
+        @media (max-width: 767px) {
+             nav ul {
+               display: none;
+              }
+            .menu-toggle {
+                display: block;
             }
         }
-        /* Mobile Only Styles */
-        @media (max-width: 767px) {
-            nav ul {
-               display: none;
-          }
-            .menu-toggle {
-              display: block; /* Show on mobile */
-          }
-        }
+           /* =========================================================
+             Main
+            ========================================================= */
         main {
-          padding: 20px;
+             padding: 20px;
         }
+        /* =========================================================
+            Sections
+           ========================================================= */
         section {
-            margin-bottom: 40px;
-            padding: 20px;
-             position: relative;
-       }
+             margin-bottom: 40px;
+             padding: 20px;
+            position: relative;
+        }
+        /* =========================================================
+            Home Section
+           ========================================================= */
         #home {
             position: relative;
             text-align: center;
-          color: white;
-            overflow: hidden; /* To ensure the image doesn't overflow */
-      }
+            color: var(--white);
+            overflow: hidden;
+        }
+
         #home::before {
             content: '';
             position: absolute;
-           top: 0;
+            top: 0;
             right: 0;
-           bottom: 0;
-           left: 0;
+            bottom: 0;
+            left: 0;
             opacity: 0.5;
-           z-index: -1;
-         background-image: url('https://placehold.co/1200x600/3d475a/FFFFFF?text=Your+Business+Image'); /* Fallback image */
+            z-index: -1;
+            background-image: url('https://placehold.co/1200x600/3d475a/FFFFFF?text=Your+Business+Image');
             background-size: cover;
-           background-position: center;
+            background-position: center;
             background-repeat: no-repeat;
         }
-      .hero-content {
+
+        .hero-content {
             padding: 100px 20px;
-            position: relative; /* Ensure content is above the background */
+            position: relative;
         }
+
         .hero-content h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
+
         .hero-content p {
-           font-size: 1.2rem;
+            font-size: 1.2rem;
             margin-bottom: 30px;
-          line-height: 1.4;
-       }
-      .hero-content .cta-buttons {
-           display: flex;
-           justify-content: center;
-           gap: 10px;
-       }
-      button, .cta-button {
-           background-color: var(--primary-color);
-            color: #fff;
-            border-radius: 5px;
-          cursor: pointer;
-            transition: background-color 0.3s ease;
+            line-height: 1.4;
         }
-       button:hover, .cta-button:hover {
-           background-color: var(--secondary-color);
+
+        .hero-content .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
+        /* =========================================================
+            About Section
+           ========================================================= */
         .about-content {
-           display: flex;
+            display: flex;
             flex-direction: column;
-          align-items: center; /* Center align content */
-           text-align: center;
+            align-items: center;
+            text-align: center;
         }
+
         .gallery-placeholder {
-           margin-top: 20px;
-            border: 2px dashed #ddd;
+            margin-top: 20px;
+            border: 2px dashed var(--light-gray);
             padding: 50px;
             width: 80%;
-             display: flex;
+            display: flex;
             justify-content: center;
             align-items: center;
-       }
-        /* Service Section Styles */
+        }
+        /* =========================================================
+            Services Section
+           ========================================================= */
         .services-container {
-           display: flex;
-          flex-wrap: wrap; /* Allow cards to wrap */
-          justify-content: center; /* Center the cards */
-           gap: 20px;
-       }
-       .service-card {
-           border: 1px solid #ddd;
-          padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .service-card {
+            border: 1px solid var(--light-gray);
+            padding: 20px;
             border-radius: 8px;
             text-align: center;
-            flex: 1 1 250px; /* Flexible width, min-width of 250px */
+            flex: 1 1 250px;
             max-width: 300px;
-         display: flex;
-          flex-direction: column;
-            align-items: center;
-            background-color: #333; /* Night Mode */
-       }
-       .service-card h3 {
-          margin-bottom: 10px;
-       }
-      .service-card p {
-           margin-bottom: 15px;
-       }
-        .service-card .service-icon {
-           font-size: 3rem;
-           color: var(--primary-color);
-           margin-bottom: 15px;
-        }
-        .service-card a {
-            color: var(--primary-color); /* Link color */
-       }
-        /* Pricing Section Styles */
-        #pricing-section .pricing-content {
-             display: flex;
-             flex-direction: column;
-           align-items: center;
-           text-align: center;
-       }
-        #pricing-section .pricing-content h2 {
-           margin-bottom: 20px;
-        }
-      #pricing-section .estimate-calculator {
-           background-color: #2a2a2a;
-           padding: 20px;
-            border-radius: 8px;
-           width: 100%;
-            max-width: 500px;
-          display: flex;
-           flex-direction: column;
-          align-items: stretch; /* Stretch inputs to fit the container */
-        }
-      #pricing-section .form-group {
-           display: flex;
+            display: flex;
             flex-direction: column;
-            margin-bottom: 15px; /* Spacing between input fields */
-       }
-       #pricing-section .form-group label {
-            margin-bottom: 5px;
-           text-align: left; /* Align labels left */
+            align-items: center;
+            background-color: var(--dark-gray);
         }
-      #pricing-section .form-group select,
-      #pricing-section .form-group input {
+
+        .service-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            margin-bottom: 15px;
+        }
+
+        .service-card .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .service-card a {
+            color: var(--primary-color);
+        }
+         /* =========================================================
+            Pricing Section
+           ========================================================= */
+        #pricing-section .pricing-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #pricing-section .pricing-content h2 {
+            margin-bottom: 20px;
+        }
+
+        #pricing-section .estimate-calculator {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        #pricing-section .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        #pricing-section .form-group label {
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        #pricing-section .form-group select,
+        #pricing-section .form-group input {
             padding: 10px;
-           border: 1px solid #ddd; /* Input borders */
+            border: 1px solid var(--light-gray);
             border-radius: 5px;
             font-size: 1em;
-      }
-       #pricing-section .calculate-button {
-           padding: 10px 20px;
-           background-color: var(--primary-color);
-          color: #fff;
-           border-radius: 5px;
-            cursor: pointer;
-           margin-top: 15px;
-          transition: background-color 0.3s ease; /* Smooth transition for color change */
         }
-        #pricing-section .calculate-button:hover {
-             background-color: var(--secondary-color);
-       }
-      #pricing-section .estimate-result {
-          font-size: 1.5rem;
-            font-weight: bold;
-            margin-top: 15px;
-           color: #4caf50; /* Use green to signify success */
-       }
-       /* Color Themes for Navigation */
-       .theme-1 header {background-color: #f0f0f0;}
-        .theme-2 header {background-color: #e0f7fa;}
-       .theme-3 header {background-color: #d1c4e9;}
-       .theme-4 header {background-color: #ffe0b2;}
-      .theme-5 header {background-color: #c8e6c9;}
-        .theme-6 header {background-color: #ffccbc;}
-        .theme-7 header {background-color: #f8bbd0;}
-       /* Add some basic styling to all buttons */
-        button, .cta-button {
-           background-color: var(--primary-color);
-           color: #fff;
-           border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-       }
-        button:hover, .cta-button:hover {
-          background-color: var(--secondary-color);
-       }
-       footer {
-           background-color: #333;
-           color: #fff;
-          text-align: center;
-            padding: 10px 0;
-           display: flex;
-            justify-content: space-around;
-           align-items: center;
-          flex-wrap: wrap;
-      }
-       footer p, footer a {
-           margin: 5px;
-           color: #fff;
-        }
-         /* Ensure everything is visible when the mobile nav menu is closed */
-         #home, #about, #services, #pricing-section, #testimonials, #contact, #faq {
-           transition: transform 0.3s ease; /* Apply transition to other sections */
-        }
-       nav.mobile-nav.closed ~ main > #home,
-       nav.mobile-nav.closed ~ main > #about,
-       nav.mobile-nav.closed ~ main > #services,
-        nav.mobile-nav.closed ~ main > #pricing-section,
-      nav.mobile-nav.closed ~ main > #testimonials,
-       nav.mobile-nav.closed ~ main > #contact,
-      nav.mobile-nav.closed ~ main > #faq
-   {
-     transform: translateX(0);
-      }
-        nav.mobile-nav ~ main > #home,
-         nav.mobile-nav ~ main > #about,
-      nav.mobile-nav ~ main > #services,
-       nav.mobile-nav ~ main > #pricing-section,
-         nav.mobile-nav ~ main > #testimonials,
-       nav.mobile-nav ~ main > #contact,
-      nav.mobile-nav ~ main > #faq
-    {
-      transform: translateX(-250px);
-      }
-      .faq-section {
-          margin: 20px;
-       }
-       .faq-section div {
-           margin-bottom: 10px;
-      }
-       .faq-section button {
-            display: block;
-            width: 100%;
-           padding: 10px;
-            text-align: left;
-           border: none;
-           background-color: #444;
-             color: #fff;
-            cursor: pointer;
-          transition: background-color 0.3s ease;
-        }
-      .faq-section button:hover {
-           background-color: #555;
-       }
-      .faq-section div[style*="display:block"] {
-           background-color: rgba(240,240,240, 0.2);
-       }
-       /* Testimonial Carousel Styles */
+         /* =========================================================
+           Testimonial Section
+           ========================================================= */
        #testimonials .testimonial-carousel {
            width: 80%;
             margin: 20px auto;
             overflow: hidden;
-           position: relative; /* This enables relative positioning */
-        }
-      #testimonials .testimonial-container {
-           display: flex; /* This creates a horizontal layout */
-           transition: transform 0.6s ease-in-out; /* Transition effect */
+            position: relative;
+       }
+        #testimonials .testimonial-container {
+           display: flex;
+           transition: transform 0.6s ease-in-out;
         }
         #testimonials .testimonial {
-           flex: 0 0 100%; /* Adjust as needed for number of slides and responsiveness */
-           min-width: 100%; /* Each slide takes up the full width */
+           flex: 0 0 100%;
+           min-width: 100%;
            padding: 20px;
           text-align: center;
         }
@@ -410,7 +380,7 @@
        }
         #testimonials .carousel-controls button {
             background-color: var(--primary-color);
-           color: #fff;
+           color: var(--white);
            border-radius: 5px;
           cursor: pointer;
             margin: 0 5px;
@@ -419,229 +389,350 @@
         #testimonials .carousel-controls button:hover {
             background-color: var(--secondary-color);
         }
-      button:focus, a:focus {
-            outline: 2px solid var(--primary-color);
+        .carousel-indicators {
+           text-align: center;
+           margin-top: 10px;
        }
-     .error-message {
-          color: red;
-            font-size: 0.9rem;
-           margin-top: 2px;
-           display: block;
-      }
-    .spinner {
-         display: none;
-         margin-top: 10px;
-         font-style: italic;
-       }
-      .carousel-indicators {
-          text-align: center;
-          margin-top: 10px;
-       }
-       .carousel-indicators .dot {
-          display: inline-block;
+        .carousel-indicators .dot {
+           display: inline-block;
             width: 10px;
            height: 10px;
-           background-color: #ddd;
+           background-color: var(--light-gray);
           border-radius: 50%;
             margin: 0 5px;
            cursor: pointer;
        }
        .carousel-indicators .dot.active {
-            background-color: var(--primary-color);
+           background-color: var(--primary-color);
        }
-       .dark-theme {
-          background-color: #333;
-            color: #fff;
+        /* =========================================================
+            FAQ Section
+           ========================================================= */
+        .faq-section {
+            margin: 20px;
         }
+        .faq-section details {
+          background-color: rgba(240,240,240, 0.2);
+           margin-bottom: 10px;
+       }
+       .faq-section summary {
+           display: block;
+            width: 100%;
+           padding: 10px;
+           text-align: left;
+           background-color: #444;
+           color: var(--white);
+           cursor: pointer;
+           transition: background-color 0.3s ease;
+           list-style: none;
+         }
+      .faq-section summary:hover {
+          background-color: #555;
+      }
+        .faq-section div {
+          margin-bottom: 10px;
+      }
+        /* =========================================================
+            Contact Section
+           ========================================================= */
+          /* =========================================================
+            Shared Button Styles
+           ========================================================= */
+          button,
+         .cta-button {
+             background-color: var(--primary-color);
+             color: var(--white);
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+              padding: 10px 20px;
+             white-space: nowrap;
+           }
+
+           button:hover,
+          .cta-button:hover {
+              background-color: var(--secondary-color);
+          }
+          /* =========================================================
+            Footer
+           ========================================================= */
+        footer {
+             background-color: var(--dark-gray);
+             color: var(--white);
+              text-align: center;
+             padding: 10px 0;
+              display: flex;
+              justify-content: space-around;
+             align-items: center;
+            flex-wrap: wrap;
+         }
+
+        footer p,
+        footer a {
+            margin: 5px;
+            color: var(--white);
+        }
+         /* =========================================================
+            Error Messages
+            ========================================================= */
+        .error-message {
+           color: red;
+             font-size: 0.9rem;
+            margin-top: 2px;
+             display: block;
+        }
+        /* =========================================================
+           Spinner
+            ========================================================= */
+        .spinner {
+            display: none;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        /* =========================================================
+           Header Themes
+            ========================================================= */
+        .theme-1 header {
+          background-color: #f0f0f0;
+      }
+       .theme-2 header {
+           background-color: #e0f7fa;
+      }
+        .theme-3 header {
+           background-color: #d1c4e9;
+        }
+      .theme-4 header {
+            background-color: #ffe0b2;
+       }
+        .theme-5 header {
+           background-color: #c8e6c9;
+       }
+       .theme-6 header {
+           background-color: #ffccbc;
+       }
+       .theme-7 header {
+           background-color: #f8bbd0;
+      }
+       /* =========================================================
+            Focus Styles
+            ========================================================= */
+         button:focus,
+          a:focus {
+               outline: 2px solid var(--primary-color);
+          }
+        /* =========================================================
+            Dark Theme
+           ========================================================= */
+          .dark-theme {
+              background-color: var(--dark-gray);
+               color: var(--white);
+          }
     </style>
-   <script type="application/ld+json">
+    <script type="application/ld+json">
         {
-           "@context": "https://schema.org",
-           "@type": "LocalBusiness",
-             "name": "Morning Dew Cleaning Crew",
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Morning Dew Cleaning Crew",
             "description": "Professional, eco-friendly cleaning services in Virginia Beach.",
-           "address": {
+            "address": {
                 "@type": "PostalAddress",
-                 "streetAddress": "5467 Bayberry Dr",
+                "streetAddress": "5467 Bayberry Dr",
                 "addressLocality": "Norfolk",
                 "addressRegion": "VA",
-               "postalCode": "23502"
+                "postalCode": "23502"
             },
-          "telephone": "+17578027170",
-           "url": "https://morningdewcleaningcrew.com",
-           "email": "justkruz@morningdewcleaningcrew.com",
-             "openingHours": [
-               "Mo-Fr 09:00-17:00"
-           ],
+            "telephone": "+17578027170",
+            "url": "https://morningdewcleaningcrew.com",
+            "email": "justkruz@morningdewcleaningcrew.com",
+            "openingHours": [
+                "Mo-Fr 09:00-17:00"
+            ],
             "priceRange": "$$",
             "sameAs": [
                 "https://facebook.com",
-                 "https://instagram.com",
-               "https://linkedin.com",
+                "https://instagram.com",
+                "https://linkedin.com",
                 "https://whatsapp.com"
-          ]
+            ]
         }
-   </script>
-   <script type="application/ld+json">
-     {
-           "@context": "https://schema.org",
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
             "@type": "FAQPage",
-             "mainEntity": [
-                {
-                   "@type": "Question",
+            "mainEntity": [{
+                    "@type": "Question",
                     "name": "What services do you offer?",
                     "acceptedAnswer": {
-                      "@type": "Answer",
-                       "text": "We offer residential, commercial, and Airbnb cleaning services."
-                   }
-                },
-                {
-                     "@type": "Question",
-                     "name": "What areas do you serve?",
-                     "acceptedAnswer": {
-                         "@type": "Answer",
-                         "text": "We serve the Virginia Beach area."
+                        "@type": "Answer",
+                        "text": "We offer residential, commercial, and Airbnb cleaning services."
                     }
                 },
-               {
-                     "@type": "Question",
-                     "name": "Do you offer same-day cleaning?",
-                      "acceptedAnswer": {
+                {
+                    "@type": "Question",
+                    "name": "What areas do you serve?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We serve the Virginia Beach area."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you offer same-day cleaning?",
+                    "acceptedAnswer": {
                         "@type": "Answer",
                         "text": "Yes, we offer same-day cleaning services for residential and Airbnb properties. Please book early to secure your slot."
                     }
-               }
-          ]
+                }
+            ]
         }
     </script>
-  <script type="application/ld+json">
-     {
+    <script type="application/ld+json">
+        {
             "@context": "https://schema.org",
-           "@type": "BreadcrumbList",
-           "itemListElement": [
-               {
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
                     "@type": "ListItem",
-                   "position": 1,
-                     "name": "Home",
+                    "position": 1,
+                    "name": "Home",
                     "item": "https://morningdewcleaningcrew.com"
                 },
-               {
+                {
                     "@type": "ListItem",
                     "position": 2,
                     "name": "Services",
-                   "item": "https://morningdewcleaningcrew.com#services"
-              }
+                    "item": "https://morningdewcleaningcrew.com#services"
+                }
             ]
         }
-   </script>
-</body>
-<header>
-    <div class="logo">Morning Dew Cleaning Crew</div>
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">Morning Dew Cleaning Crew</div>
         <nav>
-           <ul id="nav-ul">
-                <li><a href="#home" data-section="home">Home</a></li>
+            <ul id="nav-ul">
+                <li><a href="#home" data-section="home" aria-current="page">Home</a></li>
                 <li><a href="#about" data-section="about">About Us</a></li>
-               <li><a href="#services" data-section="services">Services</a></li>
-               <li><a href="#pricing-section" data-section="pricing-section">Pricing</a></li>
-               <li><a href="#testimonials" data-section="testimonials">Testimonials</a></li>
+                <li><a href="#services" data-section="services">Services</a></li>
+                <li><a href="#pricing-section" data-section="pricing-section">Pricing</a></li>
+                <li><a href="#testimonials" data-section="testimonials">Testimonials</a></li>
                 <li><a href="#contact" data-section="contact">Contact Us</a></li>
-               <li><a href="#faq" data-section="faq">FAQ</a></li>
+                <li><a href="#faq" data-section="faq">FAQ</a></li>
             </ul>
-       </nav>
-       <div class="menu-toggle" aria-expanded="false" aria-controls="mobileMenu">
-           <span></span>
+        </nav>
+        <div class="menu-toggle" aria-expanded="false" aria-controls="mobileMenu">
             <span></span>
             <span></span>
-       </div>
-      <nav class="mobile-nav closed" id="mobileMenu">
-         <ul class="mobile-ul">
-              <li><a href="#home" data-section="home">Home</a></li>
-            <li><a href="#about" data-section="about">About Us</a></li>
-             <li><a href="#services" data-section="services">Services</a></li>
-           <li><a href="#pricing-section" data-section="pricing-section">Pricing</a></li>
-              <li><a href="#testimonials" data-section="testimonials">Testimonials</a></li>
-             <li><a href="#contact" data-section="contact">Contact Us</a></li>
-               <li><a href="#faq" data-section="faq">FAQ</a></li>
-          </ul>
-      </nav>
-  </header>
+            <span></span>
+        </div>
+        <nav class="mobile-nav" id="mobileMenu">
+            <ul class="mobile-ul">
+                <li><a href="#home" data-section="home" aria-current="page">Home</a></li>
+                <li><a href="#about" data-section="about">About Us</a></li>
+                <li><a href="#services" data-section="services">Services</a></li>
+                <li><a href="#pricing-section" data-section="pricing-section">Pricing</a></li>
+                <li><a href="#testimonials" data-section="testimonials">Testimonials</a></li>
+                <li><a href="#contact" data-section="contact">Contact Us</a></li>
+                <li><a href="#faq" data-section="faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-       <section id="home">
-           <div class="hero-content">
-               <h1>Help on the Way to a Cleaner Day</h1>
-               <p>Providing professional, eco-friendly cleaning services in Virginia Beach.</p>
+        <section id="home">
+            <div class="hero-content">
+                <h1>Help on the Way to a Cleaner Day</h1>
+                <p>Providing professional, eco-friendly cleaning services in Virginia Beach.</p>
                 <div class="cta-buttons">
-                  <button class="cta-button" onclick="window.location.hash = '#pricing-section'" aria-label="Get a Quote">Get a Quote</button>
-                    <button class="cta-button" onclick="window.location.hash = '#about'" aria-label="Learn More">Learn More</button>
+                    <button class="cta-button" onclick="window.location.hash = '#pricing-section'"
+                        aria-label="Get a Quote">Get a Quote</button>
+                    <button class="cta-button" onclick="window.location.hash = '#about'" aria-label="Learn More">Learn
+                        More</button>
                 </div>
-           </div>
-            <img src="https://placehold.co/1200x600/4e70a2/FFFFFF?text=Your+Business+Image" alt="Professional cleaning services image" loading="lazy" style="display: block; margin: 0 auto; max-width: 100%; aspect-ratio: 2 / 1; height: auto;" onerror="this.src='https://placehold.co/1200x600/4e70a2/FFFFFF?text=Default+Image';" data-src="https://placehold.co/1200x600/4e70a2/FFFFFF?text=Your+Business+Image" />
-       </section>
+            </div>
+            <img src="https://placehold.co/1200x600/4e70a2/FFFFFF?text=Your+Business+Image"
+                alt="Professional cleaning services image" loading="lazy"
+                style="display: block; margin: 0 auto; max-width: 100%; aspect-ratio: 2 / 1; height: auto;"
+                onerror="this.src='https://placehold.co/1200x600/4e70a2/FFFFFF?text=Default+Image';"
+                data-src="https://placehold.co/1200x600/4e70a2/FFFFFF?text=Your+Business+Image" />
+        </section>
         <section id="about">
-           <div class="about-content">
+            <div class="about-content">
                 <h2>About Us</h2>
                 <p>Company mission, vision, video/photo gallery.</p>
-               <div class="gallery-placeholder">
-                    <img src="https://placehold.co/300x200/4e70a2/FFFFFF?text=Placeholder+Image" alt="Placeholder For Video Or Gallery" style="max-width: 100%;" onerror="this.src='https://placehold.co/300x200/4e70a2/FFFFFF?text=Default+Image';" data-src="https://placehold.co/300x200/4e70a2/FFFFFF?text=Placeholder+Image" />
-              </div>
-           </div>
-      </section>
+                <div class="gallery-placeholder">
+                    <img src="https://placehold.co/300x200/4e70a2/FFFFFF?text=Placeholder+Image"
+                        alt="Placeholder For Video Or Gallery" style="max-width: 100%;"
+                        onerror="this.src='https://placehold.co/300x200/4e70a2/FFFFFF?text=Default+Image';"
+                        data-src="https://placehold.co/300x200/4e70a2/FFFFFF?text=Placeholder+Image" />
+                </div>
+            </div>
+        </section>
         <section id="services">
-             <h2>Services</h2>
-           <div class="services-container">
+            <h2>Services</h2>
+            <div class="services-container">
                 <div class="service-card">
                     <div class="service-icon">🏠</div>
                     <h3><a href="#residential-service" data-section="residential-service">Residential Cleaning</a></h3>
                     <p>Detailed cleaning for homes, apartments, and condos.</p>
-                    <a href="#testimonials" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });" aria-label="Read Testimonials for Residential Cleaning">Read Testimonials</a>
-              </div>
+                    <a href="#testimonials"
+                        onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });"
+                        aria-label="Read Testimonials for Residential Cleaning">Read Testimonials</a>
+                </div>
                 <div class="service-card">
                     <div class="service-icon">🏢</div>
                     <h3><a href="#commercial-service" data-section="commercial-service">Commercial Cleaning</a></h3>
                     <p>Professional cleaning for offices and commercial spaces.</p>
-                    <a href="#testimonials" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });" aria-label="Read Testimonials for Commercial Cleaning">Read Testimonials</a>
-              </div>
-               <div class="service-card">
-                   <div class="service-icon">🛏️</div>
+                    <a href="#testimonials"
+                        onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });"
+                        aria-label="Read Testimonials for Commercial Cleaning">Read Testimonials</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛏️</div>
                     <h3><a href="#airbnb-service" data-section="airbnb-service">Airbnb Turnover</a></h3>
                     <p>Thorough cleaning between guest stays.</p>
-                   <a href="#testimonials" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });" aria-label="Read Testimonials for Airbnb Turnover">Read Testimonials</a>
-               </div>
-              <div class="service-card">
+                    <a href="#testimonials"
+                        onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });"
+                        aria-label="Read Testimonials for Airbnb Turnover">Read Testimonials</a>
+                </div>
+                <div class="service-card">
                    <div class="service-icon">✨</div>
                     <h3>Add-Ons</h3>
                      <p>Additional services for a deeper clean.</p>
                      <a href="#testimonials" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });" aria-label="Read Testimonials for Add-Ons">Read Testimonials</a>
-              </div>
+                </div>
             </div>
-       </section>
-       <section id="pricing-section">
-           <div class="pricing-content">
+        </section>
+        <section id="pricing-section">
+            <div class="pricing-content">
                 <h2>Get an Estimate</h2>
-                 <p>Fill out the form below to get an instant estimate for your cleaning services.</p>
-                 <div class="estimate-calculator">
+                <p>Fill out the form below to get an instant estimate for your cleaning services.</p>
+                <div class="estimate-calculator">
                     <form id="estimateForm">
                         <div class="form-group">
-                             <label for="propertyType">Property Type:</label>
+                            <label for="propertyType">Property Type:</label>
                             <select id="propertyType" required aria-label="Select Property Type">
-                                 <option value="">Select Type</option>
+                                <option value="">Select Type</option>
                                 <option value="residential">Residential</option>
-                                  <option value="commercial">Commercial</option>
-                                 <option value="airbnb">Airbnb</option>
-                             </select>
+                                <option value="commercial">Commercial</option>
+                                <option value="airbnb">Airbnb</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                             <label for="squareFootage">Square Footage:</label>
-                             <input type="number" id="squareFootage" placeholder="e.g., 1500 sq ft" required min="0" aria-label="Enter Square Footage" title="Enter the area in square feet">
-                       </div>
+                            <label for="squareFootage">Square Footage:</label>
+                            <input type="number" id="squareFootage" placeholder="e.g., 1500 sq ft" required min="0"
+                                aria-label="Enter Square Footage" title="Enter the area in square feet">
+                        </div>
                         <div class="form-group">
                             <label for="bedrooms">Number of Bedrooms:</label>
-                           <input type="number" id="bedrooms" placeholder="e.g., 3 bedrooms" required min="0" aria-label="Enter Number of Bedrooms" title="Enter number of bedrooms">
-                      </div>
+                            <input type="number" id="bedrooms" placeholder="e.g., 3 bedrooms" required min="0"
+                                aria-label="Enter Number of Bedrooms" title="Enter number of bedrooms">
+                        </div>
                         <div class="form-group">
-                           <label for="bathrooms">Number of Bathrooms:</label>
-                            <input type="number" id="bathrooms" placeholder="e.g., 2 bathrooms" required min="0" aria-label="Enter Number of Bathrooms" title="Enter number of bathrooms">
-                       </div>
+                            <label for="bathrooms">Number of Bathrooms:</label>
+                            <input type="number" id="bathrooms" placeholder="e.g., 2 bathrooms" required min="0"
+                                aria-label="Enter Number of Bathrooms" title="Enter number of bathrooms">
+                        </div>
                         <div class="form-group">
                                  <label for="addOns">Add-Ons (Optional):</label>
                                   <select id="addOns" multiple aria-label="Select Add-Ons">
@@ -651,24 +742,24 @@
                                         <option value="eco">Eco-Friendly Products</option>
                                  </select>
                        </div>
-                       <div class="form-group">
-                             <label for="cleanType">Service Type:</label>
+                        <div class="form-group">
+                           <label for="cleanType">Service Type:</label>
                               <select id="cleanType" required  aria-label="Select Service Type">
                                  <option value="regular">Regular Cleaning</option>
                                    <option value="deep">Deep Cleaning</option>
                                     <option value="heavy">Heavy Deep Cleaning</option>
                               </select>
                        </div>
-                        <button type="submit" class="calculate-button" aria-label="Calculate Estimate">Calculate Estimate</button>
-                   </form>
-                   <div class="estimate-result" aria-live="polite"></div>
-                   <p class="disclaimer">This is an estimate. Final pricing may vary based on specific requirements.</p>
-                 <div class="spinner" style="display:none;">Calculating...</div>
+                        <button type="submit" class="cta-button" aria-label="Calculate Estimate">Calculate Estimate</button>
+                    </form>
+                    <div class="estimate-result" aria-live="polite"></div>
+                    <p class="disclaimer">This is an estimate. Final pricing may vary based on specific requirements.</p>
+                    <div class="spinner">Calculating...</div>
                 </div>
             </div>
-      </section>
-       <section id="testimonials">
-           <h2>Testimonials</h2>
+        </section>
+        <section id="testimonials">
+            <h2>Testimonials</h2>
            <div class="testimonial-carousel">
                 <div class="testimonial-container">
                     <div class="testimonial">
@@ -690,302 +781,96 @@
                 </div>
               <div class="carousel-indicators"></div>
          </div>
-       </section>
-       <section id="contact">
-           <h2>Contact Us</h2>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
             <p>Contact form, Google Maps, social media links.</p>
+        </section>
+         <section id="faq" class="faq-section">
+            <h2>FAQ</h2>
+            <details>
+                <summary role="button" aria-expanded="false" aria-controls="faq1">What services do you offer?</summary>
+                 <div id="faq1" role="region">We offer residential, commercial, and Airbnb cleaning services.</div>
+             </details>
+            <details>
+                 <summary role="button" aria-expanded="false" aria-controls="faq2">What areas do you serve?</summary>
+                 <div id="faq2"  role="region">We serve the Virginia Beach area.</div>
+             </details>
+              <button id="toggleAllFAQs">Show All</button>
        </section>
-        <section id="faq" class="faq-section">
-           <h2>FAQ</h2>
-           <div>
-                <button data-target="faq1" aria-label="Toggle FAQ - What services do you offer?" role="button" tabindex="0">What services do you offer?</button>
-                 <div id="faq1" style="display:none;" role="region">We offer residential, commercial, and Airbnb cleaning services.</div>
-            </div>
-           <div>
-               <button data-target="faq2" aria-label="Toggle FAQ - What areas do you serve?" role="button" tabindex="0">What areas do you serve?</button>
-                <div id="faq2" style="display:none;" role="region">We serve the Virginia Beach area.</div>
-            </div>
-             <button id="toggleAllFAQs">Show All</button>
-      </section>
-  </main>
-  <footer>
+    </main>
+    <footer>
         <p>© 2024 Morning Dew Cleaning Crew</p>
          <p>5467 Bayberry Dr, Norfolk, VA 23502</p>
         <nav aria-label="Social Media Links">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook (opens in a new tab)">Facebook</a>
-             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram (opens in a new tab)">Instagram</a>
-            <a href="https" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn (opens in a new tab)">LinkedIn</a>
-            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on WhatsApp (opens in a new tab)">WhatsApp</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                aria-label="Follow us on Facebook (opens in a new tab)">Facebook</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                aria-label="Follow us on Instagram (opens in a new tab)">Instagram</a>
+            <a href="https" target="_blank" rel="noopener noreferrer"
+                aria-label="Follow us on LinkedIn (opens in a new tab)">LinkedIn</a>
+            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer"
+                aria-label="Follow us on WhatsApp (opens in a new tab)">WhatsApp</a>
         </nav>
-  </footer>
-  <script defer>
-        function toggleFAQ(id) {
-           const faq = document.getElementById(id);
-            const button = document.querySelector(`[data-target="${id}"]`);
-            const isOpen = faq.style.display === 'block';
-            faq.style.display = isOpen ? 'none' : 'block';
-            button.setAttribute('aria-expanded', !isOpen);
+    </footer>
+    <script defer>
+        function toggleFAQ(details) {
+              const isOpen = details.hasAttribute('open');
+              details.open = !isOpen;
+              details.querySelector('summary').setAttribute('aria-expanded', !isOpen)
         }
-          document.getElementById('toggleAllFAQs').addEventListener('click', function () {
-            const allFAQs = document.querySelectorAll('.faq-section div');
-              allFAQs.forEach(faq => faq.style.display = 'block');
-              this.textContent = 'Hide All';
-         });
-          function debounce(func, wait) {
-               let timeout;
-              return function (...args) {
-                   clearTimeout(timeout);
-                   timeout = setTimeout(() => func.apply(this, args), wait);
-               };
-          }
+           document.getElementById('toggleAllFAQs').addEventListener('click', function () {
+               const allFAQs = document.querySelectorAll('.faq-section details');
+                const isOpen = this.textContent === 'Show All'
+             allFAQs.forEach(faq => faq.open = isOpen);
+               this.textContent = isOpen ? 'Hide All' : 'Show All';
+           });
+        function debounce(func, wait) {
+            let timeout;
+            return function (...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
         function showError(input, message) {
              let error = input.parentElement.querySelector('.error-message');
              if (!error) {
-               error = document.createElement('div');
-              error.className = 'error-message';
-               input.parentElement.appendChild(error);
-           }
-          error.textContent = message;
+                error = document.createElement('div');
+               error.className = 'error-message';
+                 input.parentElement.appendChild(error);
+            }
+            error.textContent = message;
            input.style.borderColor = 'red';
-      }
+        }
        function clearError(input) {
            const error = input.parentElement.querySelector('.error-message');
             if (error) error.remove();
             input.style.borderColor = '#ddd';
         }
         document.querySelectorAll('img').forEach(img => {
-           img.onerror = () => img.alt = 'Image not available';
+            img.onerror = () => img.alt = 'Image not available';
         });
         document.addEventListener('DOMContentLoaded', function () {
             const navLinks = document.querySelectorAll('nav ul a, nav.mobile-nav ul a');
             const sections = document.querySelectorAll('main section');
             const header = document.querySelector('header');
             const menuToggle = document.querySelector('.menu-toggle');
-             const mobileNav = document.querySelector('.mobile-nav');
+            const mobileNav = document.querySelector('.mobile-nav');
             const estimateForm = document.getElementById('estimateForm');
-             const estimateResult = document.querySelector('.estimate-result');
-            const testimonialContainer = document.querySelector('.testimonial-container');
+            const estimateResult = document.querySelector('.estimate-result');
+           const testimonialContainer = document.querySelector('.testimonial-container');
             const prevButton = document.getElementById('prevTestimonial');
-           const nextButton = document.getElementById('nextTestimonial');
-             const squareFootageInput = document.getElementById('squareFootage');
-            const bedroomsInput = document.getElementById('bedrooms');
+            const nextButton = document.getElementById('nextTestimonial');
+            const squareFootageInput = document.getElementById('squareFootage');
+           const bedroomsInput = document.getElementById('bedrooms');
            const bathroomsInput = document.getElementById('bathrooms');
-          const lazyBackground = document.getElementById('home');
+            const lazyBackground = document.getElementById('home');
             const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-           const headerThemes = ["theme-1", "theme-2", "theme-3", "theme-4", "theme-5", "theme-6", "theme-7"]
-          let isOpen = false
+            const headerThemes = ["theme-1", "theme-2", "theme-3", "theme-4", "theme-5", "theme-6", "theme-7"]
           let currentTestimonial = 0;
              const totalTestimonials = testimonialContainer.children.length;
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        lazyBackground.style.backgroundImage = "url('https://placehold.co/1200x600/4e70a2/FFFFFF?text=Your+Business+Image')";
-                     }
-               });
-            }, { threshold: 0.5 });
-            observer.observe(lazyBackground);
-            function setActiveNavLink(sectionId) {
-               navLinks.forEach(link => {
-                    link.classList.remove('active');
-               });
-               const activeLink = document.querySelector(`nav a[data-section="${sectionId}"], nav.mobile-nav a[data-section="${sectionId}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-              }
-           }
-          function changeHeaderTheme() {
-               let currentTheme = headerThemes[0];
-                sections.forEach((section, index) => {
-                    let rect = section.getBoundingClientRect();
-                   if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                        header.classList.remove(currentTheme);
-                        currentTheme = headerThemes[index % headerThemes.length];
-                      header.classList.add(currentTheme);
-                        setActiveNavLink(section.id)
-                 }
-                });
-           }
-           // Function to toggle the mobile navigation menu
-           function toggleMobileNav() {
-                 const isExpanded = mobileNav.classList.toggle('open');
-               menuToggle.setAttribute('aria-expanded', isExpanded);
-               if (mobileNav.classList.contains('open')) {
-                   mobileNav.querySelector('a').focus();
-               } else {
-                    menuToggle.focus();
-                }
-                isOpen = !isOpen
-            }
-          function closeMobileNav() {
-                mobileNav.classList.remove('open');
-               menuToggle.setAttribute('aria-expanded', 'false');
-                isOpen = false;
-          }
-           function updateTestimonial() {
-               testimonialContainer.style.transform = `translateX(-${currentTestimonial * 100}%)`;
-               const dots = document.querySelectorAll('.dot');
-               dots.forEach((dot, index) => dot.classList.toggle('active', index === currentTestimonial));
-               const activeTestimonial = testimonialContainer.children[currentTestimonial];
-               activeTestimonial.setAttribute('tabindex', '-1');
-               activeTestimonial.focus();
-           }
-           function nextTestimonial() {
-               currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-                updateTestimonial();
-          }
-           function prevTestimonial() {
-                currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
-                updateTestimonial();
-            }
-           nextButton.addEventListener('click', nextTestimonial);
-            prevButton.addEventListener('click', prevTestimonial);
-            prevButton.addEventListener('keydown', (e) => {
-               if (e.key === 'Enter' || e.key === ' ') {
-                   prevTestimonial();
-               }
-            });
-           nextButton.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                     nextTestimonial();
-                }
-            });
-           function validateInput(input, minValue = 0) {
-                const value = parseFloat(input.value);
-                let error = input.parentElement.querySelector('.error-message');
-              if (error) {
-                    error.remove();
-                }
-              if (isNaN(value) || value < minValue) {
-                  showError(input, `Value must be at least ${minValue}.`);
-                     return false;
-              } else {
-                   clearError(input)
-                   return true;
-                }
-           }
-           // Estimate Calculator Logic
-          estimateForm.addEventListener('submit', function (event) {
-                event.preventDefault();
-                 document.querySelector('.spinner').style.display = 'block';
-                setTimeout(() => {
-                     const propertyType = document.getElementById('propertyType').value;
-                    const squareFootage = parseFloat(document.getElementById('squareFootage').value);
-                     const bedrooms = parseInt(document.getElementById('bedrooms').value);
-                   const bathrooms = parseInt(document.getElementById('bathrooms').value);
-                   const addOns = Array.from(document.getElementById('addOns').selectedOptions).map(option => option.value);
-                     const cleanType = document.getElementById('cleanType').value;
-               // Validate inputs
-                   if (propertyType === "") {
-                        estimateResult.textContent = "Please select a property type.";
-                       return;
-                    }
-                   if (!validateInput(squareFootageInput) || !validateInput(bedroomsInput) || !validateInput(bathroomsInput)) {
-                        estimateResult.textContent = 'Please enter valid inputs for all fields.';
-                      return;
-                   }
-                    // Base rates based on property type
-                    let baseRate = 0;
-                    switch (propertyType) {
-                        case 'residential':
-                            baseRate = 50; // Example base rate
-                            break;
-                       case 'commercial':
-                            baseRate = 150;
-                          break;
-                        case 'airbnb':
-                             baseRate = 100;
-                            break;
-                        default:
-                           estimateResult.textContent = 'Please select a valid property type.';
-                           return;
-                   }
-
-                     let typeMultiplier = 1;
-                     if(cleanType === 'deep') typeMultiplier = 1.5;
-                    if (cleanType === 'heavy') typeMultiplier = 2;
-
-                   // Calculate the estimate
-                   let estimate = (baseRate + (squareFootage * 0.1) + (bedrooms * 20) + (bathrooms * 25)) * typeMultiplier;
-
-                    // Add-ons pricing
-                 if (addOns.includes('carpet')) {
-                     estimate += 50;
-                   }
-                   if (addOns.includes('oven')) {
-                     estimate += 40;
-                 }
-                  if (addOns.includes('laundry')) {
-                       estimate += 30;
-                  }
-                   if (addOns.includes('eco')) {
-                        estimate += 20;
-                  }
-                 // Display the result
-                estimateResult.textContent = `Estimated Price: $${estimate.toFixed(2)}`;
-                 document.querySelector('.spinner').style.display = 'none';
-            }, 1000);
-       });
-           // Change header theme on scroll
-           window.addEventListener('scroll', debounce(changeHeaderTheme, 100));
-           // Update active link on scroll
-          navLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const sectionId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(sectionId);
-                     targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      if (isOpen) {
-                         closeMobileNav();
-                   }
-              });
-           });
-            // Close mobile nav if open
-            menuToggle.addEventListener('click', toggleMobileNav);
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', closeMobileNav);
-         });
-         document.addEventListener('click', function (event) {
-           if (!mobileNav.contains(event.target) && !menuToggle.contains(event.target)) {
-                   closeMobileNav();
-               }
-         });
-           let autoplay = setInterval(nextTestimonial, 5000);
-         const controls = document.querySelector('.carousel-controls');
-          controls.addEventListener('mouseenter', () => clearInterval(autoplay));
-          controls.addEventListener('mouseleave', () => autoplay = setInterval(nextTestimonial, 5000));
-            const indicators = document.querySelector('.carousel-indicators');
-           for (let i = 0; i < totalTestimonials; i++) {
-               const dot = document.createElement('span');
-                dot.classList.add('dot');
-                if (i === currentTestimonial) dot.classList.add('active');
-               dot.addEventListener('click', () => {
-                   currentTestimonial = i;
-                     updateTestimonial();
-                 });
-                indicators.appendChild(dot);
-            }
-           const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-          const lazyObserver = new IntersectionObserver((entries, observer) => {
-               entries.forEach(entry => {
-                  if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                       observer.unobserve(img);
-                   }
-                });
-            });
-            lazyImages.forEach(img => lazyObserver.observe(img));
-           document.querySelectorAll('.faq-section button').forEach(button => {
-                button.addEventListener('click', (e) => {
-                     const id = e.target.getAttribute('data-target');
-                     toggleFAQ(id);
-               });
-           });
-             const body = document.body;
-            document.getElementById('toggleTheme').addEventListener('click', () => {
-                body.classList.toggle('dark-theme');
-            });
-    });
-</script>
-</body>
-</html>
+            let isOpen = false
+             const observer = new IntersectionObserver((entries) => {
+               entries.forEach((entry) => {
+                   if (entry.isIntersecting) {
+                        lazyBackground.style.backgroundImage = "url('https://placehold.co/1200

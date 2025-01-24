@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Morning Dew Cleaning Crew provides professional, eco-friendly cleaning services in Virginia Beach. Get a free estimate today!">
+    <meta name="description"
+        content="Morning Dew Cleaning Crew provides professional, eco-friendly cleaning services in Virginia Beach. Get a free estimate today!">
     <meta name="keywords" content="cleaning services, virginia beach, residential cleaning, commercial cleaning, airbnb cleaning">
     <title>Morning Dew Cleaning Crew</title>
     <meta property="og:title" content="Morning Dew Cleaning Crew" />
@@ -64,13 +65,13 @@
         header {
             background-color: #2a2a2a;
             padding: 15px 20px;
-            transition: background-color 0.5s ease;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
             top: 0;
             z-index: 1000;
+            min-height: 70px;
+
         }
 
         .logo {
@@ -84,6 +85,7 @@
         nav {
             display: flex;
             align-items: center;
+            transition: background-color 0.5s ease;
         }
 
         nav ul {
@@ -151,7 +153,7 @@
             transform: translateX(100%);
         }
 
-       .mobile-nav.open {
+        .mobile-nav.open {
             transform: translateX(0);
         }
 
@@ -216,20 +218,6 @@
             overflow: hidden;
         }
 
-        #home::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            opacity: 0.5;
-            z-index: -1;
-            background-image: url('https://placehold.co/1200x600/3d475a/FFFFFF?text=Your+Business+Image');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
 
         .hero-content {
             padding: 100px 20px;
@@ -673,33 +661,30 @@
             <div class="services-container">
                 <div class="service-card">
                     <div class="service-icon">🏠</div>
-                    <h3><a href="#residential-service" data-section="residential-service">Residential Cleaning</a></h3>
+                    <h3>Residential Cleaning</h3>
                     <p>Detailed cleaning for homes, apartments, and condos.</p>
-                    <a href="#testimonials"
-                        onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });"
-                        aria-label="Read Testimonials for Residential Cleaning">Read Testimonials</a>
+                    <button class="cta-button" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });"
+                        aria-label="Read Testimonials for Residential Cleaning">Read Testimonials</button>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🏢</div>
-                    <h3><a href="#commercial-service" data-section="commercial-service">Commercial Cleaning</a></h3>
+                    <h3>Commercial Cleaning</h3>
                     <p>Professional cleaning for offices and commercial spaces.</p>
-                    <a href="#testimonials"
-                        onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });"
-                        aria-label="Read Testimonials for Commercial Cleaning">Read Testimonials</a>
+                    <button class="cta-button" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });"
+                        aria-label="Read Testimonials for Commercial Cleaning">Read Testimonials</button>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🛏️</div>
-                    <h3><a href="#airbnb-service" data-section="airbnb-service">Airbnb Turnover</a></h3>
+                    <h3>Airbnb Turnover</h3>
                     <p>Thorough cleaning between guest stays.</p>
-                    <a href="#testimonials"
-                        onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });"
-                        aria-label="Read Testimonials for Airbnb Turnover">Read Testimonials</a>
+                    <button class="cta-button" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });"
+                        aria-label="Read Testimonials for Airbnb Turnover">Read Testimonials</button>
                 </div>
                 <div class="service-card">
                    <div class="service-icon">✨</div>
                     <h3>Add-Ons</h3>
                      <p>Additional services for a deeper clean.</p>
-                     <a href="#testimonials" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });" aria-label="Read Testimonials for Add-Ons">Read Testimonials</a>
+                     <button class="cta-button" onclick="event.preventDefault(); document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'start' });" aria-label="Read Testimonials for Add-Ons">Read Testimonials</button>
                 </div>
             </div>
         </section>
@@ -708,6 +693,7 @@
                 <h2>Get an Estimate</h2>
                 <p>Fill out the form below to get an instant estimate for your cleaning services.</p>
                 <div class="estimate-calculator">
+                   <div id="error-container"></div>
                     <form id="estimateForm">
                         <div class="form-group">
                             <label for="propertyType">Property Type:</label>
@@ -813,8 +799,8 @@
                 aria-label="Follow us on WhatsApp (opens in a new tab)">WhatsApp</a>
         </nav>
     </footer>
-    <script defer>
-        function toggleFAQ(details) {
+     <script defer>
+          function toggleFAQ(details) {
               const isOpen = details.hasAttribute('open');
               details.open = !isOpen;
               details.querySelector('summary').setAttribute('aria-expanded', !isOpen)
@@ -850,27 +836,4 @@
         document.querySelectorAll('img').forEach(img => {
             img.onerror = () => img.alt = 'Image not available';
         });
-        document.addEventListener('DOMContentLoaded', function () {
-            const navLinks = document.querySelectorAll('nav ul a, nav.mobile-nav ul a');
-            const sections = document.querySelectorAll('main section');
-            const header = document.querySelector('header');
-            const menuToggle = document.querySelector('.menu-toggle');
-            const mobileNav = document.querySelector('.mobile-nav');
-            const estimateForm = document.getElementById('estimateForm');
-            const estimateResult = document.querySelector('.estimate-result');
-           const testimonialContainer = document.querySelector('.testimonial-container');
-            const prevButton = document.getElementById('prevTestimonial');
-            const nextButton = document.getElementById('nextTestimonial');
-            const squareFootageInput = document.getElementById('squareFootage');
-           const bedroomsInput = document.getElementById('bedrooms');
-           const bathroomsInput = document.getElementById('bathrooms');
-            const lazyBackground = document.getElementById('home');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-            const headerThemes = ["theme-1", "theme-2", "theme-3", "theme-4", "theme-5", "theme-6", "theme-7"]
-          let currentTestimonial = 0;
-             const totalTestimonials = testimonialContainer.children.length;
-            let isOpen = false
-             const observer = new IntersectionObserver((entries) => {
-               entries.forEach((entry) => {
-                   if (entry.isIntersecting) {
-                        lazyBackground.style.backgroundImage = "url('https://placehold.co/1200
+        document
